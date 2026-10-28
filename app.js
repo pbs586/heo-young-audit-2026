@@ -647,7 +647,8 @@
   }
 
   function metricCardHtml(item) {
-    return `<div class="metric-card"><span class="metric-card-label">핵심 수치</span><strong>${escapeHtml(item.keyMetric || item.title)}</strong></div>`;
+    const stn = STATION_META[item.dateCode] || { stnCode: "감사" };
+    return `<div class="metric-card"><span class="metric-card-label">${escapeHtml(stn.stnCode)} · ${escapeHtml(item.agency)}</span><strong>${escapeHtml(item.keyMetric || item.title)}</strong><span class="metric-card-foot">국회의원 허영</span></div>`;
   }
 
   function closeModal() {
