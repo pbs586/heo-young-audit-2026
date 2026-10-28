@@ -53,23 +53,14 @@ button,input,select{font:inherit;color:inherit}
 
 /* 소개 */
 .intro{padding:var(--s12) 0 var(--s10)}
-.intro .wrap{display:grid;grid-template-columns:1fr 340px;gap:var(--s12);align-items:start}
+.intro .wrap{display:grid;grid-template-columns:1fr 440px;gap:var(--s12);align-items:center}
 .crumb{font-size:var(--fs-sm);color:var(--text-muted);margin-bottom:var(--s4)}
 .crumb b{color:var(--text-subtle);font-weight:600}
 h1{font-size:var(--fs-display);line-height:1.25;margin:0 0 var(--s5);color:var(--text-bolder);letter-spacing:-0.02em}
-.lede{font-size:var(--fs-body);color:var(--text-subtle);margin:0;max-width:640px}
-.lede + .lede{margin-top:var(--s2)}
-.profile{border:1px solid var(--border-light);border-radius:var(--r-xl);overflow:hidden;background:var(--surface);box-shadow:var(--shadow1)}
+.lede{font-size:var(--fs-h4);color:var(--text-subtle);margin:0}
+.lede i{font-style:normal;margin:0 10px;color:var(--border)}
+.profile{margin:0;border-radius:var(--r-xl);overflow:hidden;box-shadow:var(--shadow1)}
 .profile img{display:block;width:100%;height:auto;aspect-ratio:3/2;object-fit:cover}
-.profile dl{margin:0;padding:var(--s5) var(--s6);display:grid;grid-template-columns:auto 1fr;gap:var(--s2) var(--s4);font-size:var(--fs-sm)}
-.profile dt{color:var(--text-muted)}
-.profile dd{margin:0;font-weight:600}
-
-.summary{display:grid;grid-template-columns:repeat(4,1fr);border:1px solid var(--border-light);border-radius:var(--r-xl);margin-top:var(--s10);background:var(--surface)}
-.summary div{padding:var(--s5) var(--s6);border-left:1px solid var(--border-light)}
-.summary div:first-child{border-left:0}
-.summary b{display:block;font-size:var(--fs-h1);font-weight:700;color:var(--text-bolder);line-height:1.2}
-.summary span{font-size:var(--fs-sm);color:var(--text-muted)}
 
 section{padding:var(--s12) 0}
 .sec-alt{background:var(--bg-subtle);border-top:1px solid var(--border-light);border-bottom:1px solid var(--border-light)}
@@ -163,7 +154,7 @@ footer b{color:var(--text-subtle);font-size:var(--fs-sm)}
 
 @media (max-width:960px){
   .intro .wrap{grid-template-columns:1fr}
-  .profile{max-width:420px}
+  .profile{max-width:480px}
   .gw-grid{grid-template-columns:repeat(2,1fr)}
   .cards{grid-template-columns:repeat(2,1fr)}
 }
@@ -172,9 +163,6 @@ footer b{color:var(--text-subtle);font-size:var(--fs-sm)}
   .wrap{padding:0 var(--s4)}
   .gnb{display:none}
   .intro{padding:var(--s8) 0}
-  .summary{grid-template-columns:repeat(2,1fr)}
-  .summary div:nth-child(3){border-left:0}
-  .summary div:nth-child(n+3){border-top:1px solid var(--border-light)}
   .tabs{width:100%;margin-right:0}
   .search,.search input,.sel{width:100%}
   .cards{grid-template-columns:1fr;padding:var(--s4);gap:var(--s4)}
@@ -209,24 +197,9 @@ footer b{color:var(--text-subtle);font-size:var(--fs-sm)}
     <div>
       <div class="crumb">2026 국정감사 <b>· 국토교통위원회</b></div>
       <h1>허영 의원<br>2026 국정감사 질의</h1>
-      <p class="lede">10월 7일부터 23일까지 국토교통부와 산하기관 국정감사에서 질의한 내용입니다. 질의마다 국감장에서 띄운 패널과 관련 보도를 함께 모았습니다.</p>
-      <p class="lede">기관 답변과 이행 결과는 확인되는 대로 추가합니다.</p>
-      <div class="summary" aria-label="요약">
-        <div><b class="num" id="sIt">-</b><span>질의</span></div>
-        <div><b class="num" id="sOrg">-</b><span>피감기관</span></div>
-        <div><b class="num" id="sPr">-</b><span>관련 보도</span></div>
-        <div><b class="num" id="sGw">-</b><span>춘천·강원 현안</span></div>
-      </div>
+      <p class="lede num">10.7–10.23<i>·</i>국토교통부와 산하기관</p>
     </div>
-    <figure class="profile" style="margin:0">
-      <img src="assets/heo-young.jpg" alt="허영 의원" width="1280" height="853">
-      <dl>
-        <dt>이름</dt><dd>허영</dd>
-        <dt>소속</dt><dd>더불어민주당</dd>
-        <dt>지역구</dt><dd>강원 춘천시·철원군·화천군·양구군 갑</dd>
-        <dt>위원회</dt><dd>국토교통위원회</dd>
-      </dl>
-    </figure>
+    <figure class="profile"><img src="assets/heo-young.jpg" alt="허영 의원" width="1280" height="853"></figure>
   </div>
 </div>
 
@@ -657,11 +630,6 @@ if (PRESS.length <= SHOW) $("#moreBtn").parentElement.remove();
 $("#moreBtn").onclick = () => { document.querySelectorAll("#pressRows tr[hidden]").forEach(tr => tr.hidden = false); $("#moreBtn").parentElement.remove(); };
 $("#pressRows").addEventListener("click", e => { const a = e.target.closest("td.q a"); if (a){ e.preventDefault(); openItem(a.dataset.no, true); } });
 
-/* 요약 */
-$("#sIt").textContent = ITEMS.length;
-$("#sOrg").textContent = new Set(ITEMS.flatMap(it => it.org.split(" · "))).size;
-$("#sPr").textContent = PRESS.length;
-$("#sGw").textContent = ITEMS.filter(it => it.gw).length;
 
 
 render();
