@@ -1,0 +1,10 @@
+# HWP 원본 파일 제외 (대외 공개용 아카이브 전용)
+*.hwp
+*.HWP
+
+# OS / 에디터 임시 파일 제외
+.DS_Store
+Thumbs.db
+~$*
+*.tmp
+*.bak

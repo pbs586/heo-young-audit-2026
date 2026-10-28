@@ -1,641 +1,237 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="ko">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>허영 국감 기록</title>
-<meta name="description" content="2026 국정감사 국토교통위원회, 허영 의원의 질의와 기관 답변, 관련 보도를 한곳에 정리했습니다.">
-<meta property="og:title" content="허영 국감 기록">
-<meta property="og:description" content="2026 국정감사 국토교통위원회 질의 48건과 관련 보도">
-<meta property="og:image" content="assets/heo-young.jpg">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
-<style>
-/* 디자인 토큰: KRDS(대한민국 정부 디자인 시스템) tokens/transformed_tokens.json 기준 */
-:root{
-  --primary-5:#ecf2fe; --primary-10:#d8e5fd; --primary-50:#256ef4; --primary-60:#0b50d0; --primary-70:#083891;
-  --secondary-5:#eef2f7; --secondary-10:#d6e0eb; --secondary-70:#063a74; --secondary-80:#052b57;
-  --success-5:#eaf6ec; --success-60:#267337; --warning-5:#fff3db; --warning-60:#8a5c00;
-  --point-5:#fbeff0; --point-60:#ab2b36;
-
-  --bg:#ffffff; --bg-subtle:#f4f5f6; --surface:#ffffff;
-  --text:#1e2124; --text-bolder:#131416; --text-subtle:#464c53; --text-muted:#6d7882;
-  --border-light:#e6e8ea; --border:#cdd1d5; --border-dark:#58616a;
-  --link:var(--primary-60);
-  --shadow1:0 1px 2px #0000000d; --shadow2:0 4px 12px #00000014;
-
-  --r-sm:4px; --r-md:6px; --r-lg:8px; --r-xl:12px;
-  --s1:4px; --s2:8px; --s3:12px; --s4:16px; --s5:20px; --s6:24px; --s8:32px; --s10:40px; --s12:48px; --s16:64px; --s20:80px;
-  --fs-display:44px; --fs-h1:32px; --fs-h2:24px; --fs-h3:19px; --fs-h4:17px;
-  --fs-body:17px; --fs-sm:15px; --fs-xs:13px;
-  --font:"Pretendard GOV","Pretendard Variable",Pretendard,-apple-system,"Malgun Gothic",sans-serif;
-  color-scheme:light;
-}
-
-*{box-sizing:border-box}
-html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
-body{margin:0;background:var(--bg);color:var(--text);font-family:var(--font);font-size:var(--fs-body);line-height:1.5;letter-spacing:-0.01em;word-break:keep-all;overflow-wrap:break-word}
-a{color:var(--link)}
-button,input,select{font:inherit;color:inherit}
-:focus-visible{outline:2px solid var(--primary-50);outline-offset:2px}
-.wrap{max-width:1200px;margin:0 auto;padding:0 var(--s6)}
-.num{font-variant-numeric:tabular-nums}
-
-/* 상단 */
-.util{background:var(--bg-subtle);border-bottom:1px solid var(--border-light);font-size:var(--fs-xs);color:var(--text-subtle)}
-.util .wrap{display:flex;align-items:center;justify-content:space-between;min-height:36px;gap:var(--s4)}
-.header{border-bottom:1px solid var(--border-light);background:var(--surface);position:sticky;top:0;z-index:20}
-.header .wrap{display:flex;align-items:center;justify-content:space-between;min-height:64px;gap:var(--s6)}
-.brand{font-size:var(--fs-h3);font-weight:700;color:var(--text-bolder);text-decoration:none;white-space:nowrap}
-.brand span{color:var(--primary-60);margin-left:var(--s2);font-weight:600}
-.gnb{display:flex;gap:var(--s1)}
-.gnb a{color:var(--text);text-decoration:none;font-size:var(--fs-sm);font-weight:600;padding:var(--s2) var(--s3);border-radius:var(--r-md)}
-.gnb a:hover{background:var(--secondary-5);color:var(--primary-60)}
-
-/* 소개 */
-.intro{background:var(--secondary-80);color:#fff;padding:var(--s16) 0}
-.intro .wrap{display:grid;grid-template-columns:1fr 440px;gap:var(--s12);align-items:center}
-.eyebrow{font-size:var(--fs-sm);font-weight:600;letter-spacing:.12em;color:#b1cefb;margin:0 0 var(--s4)}
-h1{font-size:56px;line-height:1.15;margin:0;color:#fff;letter-spacing:-0.03em}
-.byline{display:flex;align-items:baseline;gap:var(--s3);margin:var(--s8) 0 0;padding-top:var(--s5);border-top:1px solid #ffffff33;font-size:var(--fs-sm);color:#d6e0eb}
-.byline b{font-size:var(--fs-h2);color:#fff;letter-spacing:.04em}
-.profile{margin:0;border-radius:var(--r-lg);overflow:hidden}
-.profile img{display:block;width:100%;height:auto;aspect-ratio:3/2;object-fit:cover}
-
-section{padding:var(--s12) 0}
-.sec-alt{background:var(--bg-subtle);border-top:1px solid var(--border-light);border-bottom:1px solid var(--border-light)}
-.sec-h{display:flex;align-items:end;justify-content:space-between;gap:var(--s4);margin-bottom:var(--s6);flex-wrap:wrap}
-h2{font-size:var(--fs-h2);margin:0;color:var(--text-bolder)}
-.sec-h p{margin:var(--s1) 0 0;color:var(--text-muted);font-size:var(--fs-sm)}
-
-/* 질의 목록 (이슈 트래커) */
-.board{border:1px solid var(--border);border-radius:var(--r-xl);background:var(--surface);overflow:hidden}
-.bar{display:flex;flex-wrap:wrap;align-items:center;gap:var(--s3);padding:var(--s3) var(--s4);background:var(--bg-subtle);border-bottom:1px solid var(--border)}
-.tabs{display:flex;gap:var(--s1);margin-right:auto}
-.tab{border:0;background:none;padding:var(--s2) var(--s3);border-radius:var(--r-md);font-size:var(--fs-sm);font-weight:600;color:var(--text-subtle);cursor:pointer}
-.tab .n{margin-left:var(--s1);font-weight:500;color:var(--text-muted)}
-.tab[aria-selected="true"]{background:var(--surface);color:var(--text-bolder);box-shadow:0 0 0 1px var(--border)}
-.sel,.search input{height:36px;border:1px solid var(--border);border-radius:var(--r-md);background:var(--surface);font-size:var(--fs-sm);padding:0 var(--s3)}
-.sel{padding-right:var(--s8)}
-.search{position:relative}
-.search input{width:220px;padding-left:34px}
-.search svg{position:absolute;left:11px;top:11px;color:var(--text-muted)}
-.days{display:flex;gap:var(--s2);padding:var(--s3) var(--s4);border-bottom:1px solid var(--border-light);overflow-x:auto;scrollbar-width:thin}
-.day{flex:0 0 auto;border:1px solid var(--border-light);background:var(--surface);border-radius:var(--r-md);padding:var(--s1) var(--s3);font-size:var(--fs-xs);cursor:pointer;text-align:left;line-height:1.4}
-.day b{display:block;font-size:var(--fs-sm)}
-.day span{color:var(--text-muted)}
-.day[aria-pressed="true"]{border-color:var(--primary-50);background:var(--primary-5);color:var(--primary-70)}
-.day[aria-pressed="true"] span{color:var(--primary-60)}
-
-.cards{list-style:none;margin:0;padding:var(--s5);display:grid;grid-template-columns:repeat(3,1fr);gap:var(--s5)}
-.card{scroll-margin-top:80px}
-.cb{display:flex;flex-direction:column;width:100%;height:100%;text-align:left;background:var(--surface);border:1px solid var(--border-light);border-radius:var(--r-lg);padding:0;overflow:hidden;cursor:pointer;box-shadow:var(--shadow1);transition:border-color .15s,box-shadow .15s}
-.cb:hover{border-color:var(--primary-50);box-shadow:var(--shadow2)}
-.thumb{aspect-ratio:16/9;background:#fff;border-bottom:1px solid var(--border-light);overflow:hidden}
-.thumb img{display:block;width:100%;height:100%;object-fit:cover;object-position:top center}
-.thumb.txt{display:flex;flex-direction:column;justify-content:center;gap:var(--s2);padding:var(--s5) var(--s6);background:var(--secondary-5)}
-.thumb.txt b{font-size:var(--fs-h1);color:var(--primary-60);line-height:1.15}
-.thumb.txt span{font-size:var(--fs-sm);color:var(--text-subtle);line-height:1.45}
-.cbody{padding:var(--s4) var(--s5) var(--s5);display:flex;flex-direction:column;gap:var(--s2);flex:1}
-.rt{font-size:var(--fs-h4);font-weight:700;color:var(--text-bolder);line-height:1.4}
-.labels{display:flex;flex-wrap:wrap;gap:var(--s1)}
-.lb{display:inline-block;font-size:12px;font-weight:600;line-height:1;padding:4px 8px;border-radius:999px;border:1px solid var(--border-light);color:var(--text-subtle);background:var(--surface)}
-.lb.gw{border-color:transparent;background:var(--point-5);color:var(--point-60)}
-.lb.done{border-color:transparent;background:var(--success-5);color:var(--success-60)}
-.meta{margin-top:auto;font-size:var(--fs-xs);color:var(--text-muted)}
-.meta i{font-style:normal;margin:0 6px;color:var(--border)}
-
-/* 질의 상세 (팝업) */
-.dlg{width:min(960px,calc(100% - 32px));max-height:calc(100% - 32px);padding:0;border:0;border-radius:var(--r-xl);background:var(--surface);color:var(--text);box-shadow:var(--shadow2)}
-.dlg{overflow-anchor:none}
-.dlg::backdrop{background:#0009}
-.dlg .x{position:sticky;top:0;float:right;margin:var(--s3);width:36px;height:36px;border-radius:50%;border:1px solid var(--border);background:var(--surface);font-size:20px;line-height:1;cursor:pointer;z-index:1}
-.dlg figure{margin:0;background:#fff;border-bottom:1px solid var(--border-light)}
-.dlg figure img{display:block;width:100%;height:auto}
-.dlg .in{padding:var(--s6) var(--s8) var(--s8)}
-.dlg h3{font-size:var(--fs-h2);line-height:1.35;margin:var(--s2) 0 var(--s4);color:var(--text-bolder)}
-.dlg p{margin:0 0 var(--s5)}
-.dlg h4{font-size:var(--fs-xs);color:var(--text-muted);font-weight:600;margin:var(--s6) 0 var(--s2)}
-.ask{background:var(--secondary-5);border-radius:var(--r-lg);padding:var(--s4) var(--s5);font-size:var(--fs-sm);color:var(--secondary-80);font-weight:600}
-.ask small{display:block;font-weight:500;color:var(--text-muted);margin-bottom:var(--s1)}
-.ask + .ask{margin-top:var(--s3)}
-.news{list-style:none;margin:0;padding:0}
-.news a{display:block;text-decoration:none;color:var(--text);font-size:var(--fs-sm);padding:var(--s2) 0;border-bottom:1px solid var(--border-light)}
-.news a:hover .t{text-decoration:underline;color:var(--link)}
-.news .o{font-size:var(--fs-xs);color:var(--text-muted);display:block}
-.share{margin-top:var(--s6);border:1px solid var(--border);background:var(--surface);border-radius:var(--r-md);padding:var(--s1) var(--s3);font-size:var(--fs-xs);cursor:pointer;color:var(--text-subtle)}
-.none{grid-column:1/-1;padding:var(--s12) var(--s5);text-align:center;color:var(--text-muted)}
-.foot-note{margin-top:var(--s3);font-size:var(--fs-xs);color:var(--text-muted)}
-
-/* 강원 */
-.gw-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:var(--s4)}
-.gw-card{display:block;text-decoration:none;color:var(--text);background:var(--surface);border:1px solid var(--border-light);border-radius:var(--r-lg);padding:var(--s5);box-shadow:var(--shadow1)}
-.gw-card:hover{border-color:var(--primary-50)}
-.gw-card .k{font-size:var(--fs-xs);color:var(--text-muted)}
-.gw-card b{display:block;font-size:var(--fs-h2);color:var(--point-60);margin:var(--s2) 0}
-.gw-card .t{font-size:var(--fs-sm);font-weight:600;line-height:1.45}
-
-/* 언론 보도 */
-.press{width:100%;border-collapse:collapse;font-size:var(--fs-sm);background:var(--surface);border:1px solid var(--border-light);border-radius:var(--r-lg)}
-.press th{text-align:left;font-weight:600;color:var(--text-muted);font-size:var(--fs-xs);padding:var(--s3) var(--s4);border-bottom:1px solid var(--border);background:var(--bg-subtle)}
-.press td{padding:var(--s3) var(--s4);border-bottom:1px solid var(--border-light);vertical-align:top}
-.press td.o{white-space:nowrap;color:var(--text-subtle);width:140px}
-.press td.q{white-space:nowrap;width:90px}
-.press td.q a{color:var(--text-muted);text-decoration:none;font-size:var(--fs-xs)}
-.press td a.t{color:var(--text);text-decoration:none}
-.press td a.t:hover{color:var(--link);text-decoration:underline}
-.more{text-align:center;margin-top:var(--s5)}
-.btn{border:1px solid var(--border-dark);background:var(--surface);border-radius:var(--r-md);padding:var(--s2) var(--s6);font-size:var(--fs-sm);font-weight:600;cursor:pointer}
-.btn:hover{background:var(--secondary-5)}
-
-footer{background:var(--bg-subtle);border-top:1px solid var(--border-light);padding:var(--s8) 0;font-size:var(--fs-xs);color:var(--text-muted)}
-footer .wrap{display:flex;justify-content:space-between;gap:var(--s6);flex-wrap:wrap}
-footer b{color:var(--text-subtle);font-size:var(--fs-sm)}
-
-@media (max-width:960px){
-  .intro .wrap{grid-template-columns:1fr}
-  .profile{max-width:480px}
-  .gw-grid{grid-template-columns:repeat(2,1fr)}
-  .cards{grid-template-columns:repeat(2,1fr)}
-}
-@media (max-width:640px){
-  :root{--fs-display:28px;--fs-h1:24px;--fs-h2:22px}
-  .wrap{padding:0 var(--s4)}
-  .gnb{display:none}
-  .intro{padding:var(--s10) 0}
-  h1{font-size:40px}
-  .tabs{width:100%;margin-right:0}
-  .search,.search input,.sel{width:100%}
-  .cards{grid-template-columns:1fr;padding:var(--s4);gap:var(--s4)}
-  .dlg .in{padding:var(--s5) var(--s4) var(--s6)}
-  .gw-grid{grid-template-columns:1fr}
-  .press td.o{width:auto}
-  .press td.q,.press th.q{display:none}
-}
-@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.cb{transition:none}}
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>2026 허영 의원 국정감사</title>
+  <meta name="description" content="제22대 국회 국토교통위원회 국회의원 허영 2026년 국정감사" />
+  <meta property="og:title" content="2026 허영 의원 국정감사" />
+  <meta property="og:description" content="제22대 국회 국토교통위원회 국회의원 허영 2026년 국정감사" />
+  <meta property="og:type" content="website" />
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fonts-archive/Paperlogy/Paperlogy.css" />
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
+  <!-- 상단 헤더 -->
+  <header class="site-header">
+    <div class="header-main">
+      <div class="container header-main-inner">
+        <a href="#" class="brand-link" onclick="window.scrollTo({top:0,behavior:'smooth'}); return false;">
+          <div class="brand-mark" aria-hidden="true">허영</div>
+          <div class="brand-text">
+            <span class="brand-sub">더불어민주당 · 춘천·철원·화천·양구갑</span>
+            <span class="brand-title">2026 허영 의원 국정감사</span>
+          </div>
+        </a>
 
-<div class="util">
-  <div class="wrap">
-    <span>국회 국토교통위원회 · 더불어민주당 허영 의원실</span>
-  </div>
-</div>
-
-<header class="header">
-  <div class="wrap">
-    <a class="brand" href="#top">허영 국감 기록<span>2026</span></a>
-    <nav class="gnb" aria-label="주 메뉴">
-      <a href="#list">질의 목록</a><a href="#gw">춘천·강원</a><a href="#press">언론 보도</a>
-    </nav>
-  </div>
-</header>
-
-<main id="top">
-<div class="intro">
-  <div class="wrap">
-    <div>
-      <p class="eyebrow">국토교통위원회</p>
-      <h1>2026<br>국정감사</h1>
-      <p class="byline">국회의원 <b>허영</b></p>
-    </div>
-    <figure class="profile"><img src="assets/heo-young.jpg" alt="허영 의원" width="1280" height="853"></figure>
-  </div>
-</div>
-
-<section class="sec-alt" id="list">
-  <div class="wrap">
-    <div class="sec-h"><div><h2>질의 목록</h2><p>카드를 누르면 질의 패널을 크게 보고 관련 보도를 볼 수 있습니다.</p></div></div>
-    <div class="board">
-      <div class="bar">
-        <div class="tabs" role="tablist" id="tabs"></div>
-        <select class="sel" id="cat" aria-label="분야"><option value="">전체 분야</option></select>
-        <label class="search"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><input id="q" type="search" placeholder="기관, 내용 검색" aria-label="질의 검색"></label>
+        <nav class="site-nav" aria-label="주요 메뉴">
+          <a href="#highlightSection" class="nav-link">주요 질의</a>
+          <a href="#scheduleSection" class="nav-link">일자별</a>
+          <a href="#themeSection" class="nav-link">분야별</a>
+          <a href="#archiveSection" class="nav-link">전체 질의</a>
+          <button type="button" class="btn-reset-header" id="headerResetBtn">
+            전체 보기
+          </button>
+        </nav>
       </div>
-      <div class="days" id="days" role="group" aria-label="감사일"></div>
-      <ul class="cards" id="rows"></ul>
     </div>
-    <p class="foot-note">수치는 국정감사 질의서와 기관 제출 자료(의원실 재가공) 기준입니다.</p>
+  </header>
+
+  <!-- 히어로 섹션 -->
+  <section class="hero-section">
+    <div class="container">
+      <div class="hero-grid">
+        <div class="hero-copy-col">
+          <div class="hero-eyebrow">
+            <span class="eyebrow-pill">제22대 국회 국토교통위원회 · 국회의원 허영</span>
+          </div>
+
+          <h1 class="hero-headline">
+            2026 허영 의원<br />
+            <em>국정감사 보고</em>
+          </h1>
+
+          <p class="hero-report-line">
+            시민 여러분께 2026년도 국정감사 의정활동을 보고드립니다.
+          </p>
+        </div>
+
+        <!-- 우측: 현장 사진 -->
+        <div class="hero-media-col">
+          <figure class="photo-card">
+            <div class="photo-frame">
+              <img src="profile.jpg" alt="국회의원 허영" loading="eager" />
+            </div>
+          </figure>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 주요 질의 -->
+  <section id="highlightSection" class="highlight-section">
+    <div class="container">
+      <div class="highlight-header">
+        <h2 class="section-title">주요 질의</h2>
+        <div class="highlight-nav">
+          <button type="button" id="hlPrevBtn" class="ctrl-btn" aria-label="이전">← 이전</button>
+          <button type="button" id="hlNextBtn" class="ctrl-btn" aria-label="다음">다음 →</button>
+        </div>
+      </div>
+
+      <div id="highlightTrack" class="highlight-track" role="region" aria-label="주요 질의 목록"></div>
+    </div>
+  </section>
+
+  <!-- 일자별 일정 -->
+  <section id="scheduleSection" class="schedule-section">
+    <div class="container">
+      <div class="schedule-panel">
+        <div class="schedule-header">
+          <h2 class="section-title">일자별 보기</h2>
+          <div class="schedule-controls">
+            <button type="button" id="btnAllStations" class="ctrl-btn active">
+              전체 (51)
+            </button>
+            <button type="button" id="btnPrevStation" class="ctrl-btn" title="이전 일차">
+              ← 이전
+            </button>
+            <button type="button" id="btnNextStation" class="ctrl-btn" title="다음 일차">
+              다음 →
+            </button>
+          </div>
+        </div>
+
+        <div class="timeline-viewport">
+          <div class="timeline-track">
+            <div class="timeline-line-bg"></div>
+            <div id="railLineProgress" class="timeline-line-fill"></div>
+            <div id="stationNodesContainer" class="timeline-nodes" role="tablist" aria-label="국정감사 7개 일차"></div>
+          </div>
+        </div>
+
+        <div id="stationSignboard" class="schedule-summary-bar"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 메인 콘텐츠 -->
+  <main class="container main-content">
+    <!-- 분야별 보기 -->
+    <section id="themeSection" class="theme-section">
+      <div class="section-head">
+        <h2 class="section-title">분야별 보기</h2>
+      </div>
+
+      <div id="themeGrid" class="theme-grid" role="region" aria-label="분야 선택"></div>
+    </section>
+
+    <!-- 전체 질의 -->
+    <section id="archiveSection" class="archive-section">
+      <div class="section-head">
+        <h2 class="section-title">전체 질의</h2>
+        <div class="archive-meta-bar">
+          <span id="resultCount" class="result-count"><strong>51</strong>건</span>
+          <button type="button" id="resetFilterBtn" class="btn-reset-filter" style="display: none;">
+            필터 해제 ✕
+          </button>
+        </div>
+      </div>
+
+      <!-- 검색창 & 보기 방식 전환 -->
+      <div class="archive-toolbar">
+        <div class="search-box">
+          <svg class="search-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+          <input
+            type="search"
+            id="searchInput"
+            class="search-input"
+            placeholder="검색어 입력 (예: GTX-B, 춘천, 강촌콘도, 다자녀, LH, 인천공항)"
+            aria-label="질의 검색"
+          />
+          <button type="button" id="searchClear" class="search-clear" title="검색어 지우기">지우기</button>
+        </div>
+
+        <div class="view-switch" role="group" aria-label="보기 방식">
+          <button type="button" id="viewCardBtn" class="view-btn active">
+            카드
+          </button>
+          <button type="button" id="viewSlideBtn" class="view-btn">
+            크게 보기
+          </button>
+          <button type="button" id="viewListBtn" class="view-btn">
+            목록
+          </button>
+        </div>
+      </div>
+
+      <!-- 키워드 태그 -->
+      <div class="keyword-bar">
+        <span class="keyword-label">키워드</span>
+        <div id="quickTags" class="keyword-list"></div>
+      </div>
+
+      <!-- 결과 영역 -->
+      <div id="resultsContainer"></div>
+    </section>
+  </main>
+
+  <!-- 푸터 -->
+  <footer class="site-footer">
+    <div class="container footer-inner-simple">
+      <strong class="footer-heading">국회의원 허영 의원실</strong>
+      <span class="footer-desc">더불어민주당 (강원 춘천·철원·화천·양구갑) · 국회 국토교통위원회</span>
+    </div>
+  </footer>
+
+  <!-- 상세 모달 -->
+  <div id="detailModal" class="modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal-dialog">
+      <div class="modal-topbar">
+        <div id="modalBadges" class="modal-badges"></div>
+        <div class="modal-actions">
+          <button type="button" id="modalShareBtn" class="modal-action-btn" title="링크 복사">
+            링크 복사
+          </button>
+          <button type="button" id="modalPrintBtn" class="modal-action-btn" title="인쇄">
+            인쇄
+          </button>
+          <button type="button" id="modalCloseBtn" class="modal-close-btn" title="닫기 (ESC)">
+            닫기 ✕
+          </button>
+        </div>
+      </div>
+
+      <div class="modal-header">
+        <h2 id="modalTitle" class="modal-title"></h2>
+        <div class="modal-meta-bar">
+          <span class="modal-metric-pill" id="modalMetric"></span>
+          <span class="modal-target-pill" id="modalTarget"></span>
+        </div>
+      </div>
+
+      <div id="modalContent" class="modal-body"></div>
+
+      <div class="modal-footer">
+        <button type="button" id="modalPrevBtn" class="modal-nav-btn">
+          ← 이전
+        </button>
+        <button type="button" id="modalNextBtn" class="modal-nav-btn">
+          다음 →
+        </button>
+      </div>
+    </div>
   </div>
-</section>
 
-<section id="gw">
-  <div class="wrap">
-    <div class="sec-h"><div><h2>춘천·강원 현안</h2><p>지역구와 강원도에 관련된 질의입니다.</p></div></div>
-    <div class="gw-grid" id="gwGrid"></div>
-  </div>
-</section>
+  <!-- 토스트 메시지 -->
+  <div id="toast" class="toast-message" role="status" aria-live="polite"></div>
 
-<section class="sec-alt" id="press">
-  <div class="wrap">
-    <div class="sec-h"><div><h2>언론 보도</h2><p id="pressMeta"></p></div></div>
-    <table class="press">
-      <thead><tr><th scope="col">언론사</th><th scope="col">기사 제목</th><th scope="col" class="q">관련 질의</th></tr></thead>
-      <tbody id="pressRows"></tbody>
-    </table>
-    <div class="more"><button class="btn" id="moreBtn" type="button">보도 더 보기</button></div>
-  </div>
-</section>
-</main>
-
-<dialog class="dlg" id="dlg" aria-labelledby="dlgT"><button class="x" type="button" aria-label="닫기" data-close>×</button><div id="dlgBody"></div></dialog>
-
-<footer>
-  <div class="wrap">
-    <div><b>허영 의원실</b><br>국회 국토교통위원회</div>
-    <div>기사의 저작권은 각 언론사에 있습니다.<br>화면 구성은 대한민국 정부 디자인 시스템(KRDS)을 참고했습니다.</div>
-  </div>
-</footer>
-
-<script>
-const DAYS = [
-  {id:"1007", m:"10.7", w:"수", title:"국토교통부", org:"국토교통부 · 행복청 · 새만금개발청"},
-  {id:"1008", m:"10.8", w:"목", title:"도로·교통안전", org:"한국도로공사 · 교통안전공단 · 자배원"},
-  {id:"1012", m:"10.12", w:"월", title:"LH", org:"한국토지주택공사 등"},
-  {id:"1013", m:"10.13", w:"화", title:"철도", org:"코레일 · 국가철도공단"},
-  {id:"1015", m:"10.15", w:"목", title:"주택금융", org:"HUG · 한국부동산원 등"},
-  {id:"1022", m:"10.22", w:"목", title:"항공", org:"인천국제공항공사 · 한국공항공사"},
-  {id:"1023", m:"10.23", w:"금", title:"종합감사", org:"국토교통부 및 산하기관"}
-];
-const CATS = ["주택·부동산","건설·안전","도로","철도","항공","재정·금융"];
-const N = (o,t,u) => ({o,t,u});
-
-const ITEMS = [
-/* 10.7 국토교통부 */
-{d:"1007",img:"assets/panels/q01.webp",org:"국토교통부",cat:"재정·금융",stat:"0건",sl:"2·3기 신도시 용지 리츠 우선공급·LH 지분출자 실적",
- title:"리츠 키운다더니 금융투자 확대 실적 ‘0건’",
- sum:"2024년 「리츠 활성화 방안」의 금융투자 과제 대부분이 실적이 없거나 제도 개선이 멈췄습니다. 대출투자 허용도 실적이 0건이고, 투자 한도 폐지는 시행령 개정이 무산됐습니다.",
- ask:"부동산금융 사각지대를 메울 국토부의 실행력과 과제 재점검",
- news:[N("강원일보","리츠 키운다더니 금융투자 확대 실적 ‘0건’…제도개선 멈췄다","https://www.kwnews.co.kr/article/20261005500912"),N("서울경제","리츠 활성화 방안 2년…신도시 용지 지원 실적 전무","https://m.sedaily.com/article/20098217"),N("스트레이트뉴스","리츠 활성화 2년여…신도시 지원·대출 투자 실적 ‘0’","https://www.straightnews.co.kr/news/articleView.html?idxno=312511")]},
-{d:"1007",img:"assets/panels/q02.webp",org:"국토교통부",cat:"건설·안전",stat:"2,247억",sl:"부실벌점 상위 CM업체 4곳의 공공주택 53개 사업 수주액",
- title:"LH 계약업무 조달청 이관 뒤, 부실 사각지대 더 커졌다",
- sum:"계약업무가 조달청으로 넘어가면서 벌점의 실질 감점폭이 LH 자체 심사 때의 약 10분의 1로 줄었습니다. 설계 분야의 당선횟수 제한도 사라졌습니다.",
- ask:"공공주택 품질을 지키던 LH의 제재 장치를 조달청 평가에도 복원",
- news:[N("강원일보","부실벌점 CM업체들, 조달청 이관 후 2천억 넘게 수주","https://www.kwnews.co.kr/article/20261007501354"),N("데일리안","LH 입찰 조달청 이관 뒤 벌점 영향 축소…상위 업체 4곳 2247억 수주","https://www.dailian.co.kr/news/view/1698742"),N("강원도민일보","부실벌점 받아도 공공주택 수주…CM 상위 4곳 53건·2247억원","https://www.kado.net/news/articleView.html?idxno=2076910"),N("스트레이트뉴스","부실벌점 받고도 공공주택 2247억원 수주…조달청 이관 뒤 제재 힘 빠졌다","https://www.straightnews.co.kr/news/articleView.html?idxno=312662")]},
-{d:"1007",img:"assets/panels/q03.webp",org:"국토교통부",cat:"건설·안전",stat:"65.2%",sl:"‘다른 직군이 서류상 품질관리자로 등록돼 있다’는 현장 응답",
- title:"서류로만 채운 품질관리자, 품질관리 체계 바로 세워야",
- sum:"최근 1년간 건설업체 벌점의 53.4%가 품질관리 사유였습니다. 익산국토관리청은 90.6%인데 국가철도공단은 0%였습니다. 같은 기준인데 기관마다 결과가 극단적으로 갈립니다.",
- ask:"광주·검단 붕괴사고 이후 약속한 품질관리자 겸직 금지의 실효성 점검",
- news:[]},
-{d:"1007",img:"assets/panels/q04.webp",org:"국토교통부",cat:"재정·금융",stat:"38.5%",sl:"국비 600억 스마트시티 챌린지 서비스 39개 중 운영 차질",
- title:"국비 600억 스마트시티 챌린지, 서비스 10개 중 4개 멈춰",
- sum:"7개 지자체에 1,318억 원을 투입한 실증 서비스 중 15개가 멈췄거나 반쪽 운영 중입니다. 중단된 서비스 12개 중 11개는 2년을 넘기지 못했고, 국비를 환수한 사례는 없습니다.",
- ask:"운영 지속 의무기간, 정기 사후평가, 후속 공모에 운영실적 반영",
- news:[N("서울경제TV","스마트시티 서비스 38.5% 운영 차질…국비 환수 사례 없어","https://www.sentv.co.kr/article/view/sentv202610070014"),N("뉴스통(연합뉴스)","스마트시티 서비스 10개 중 4개 운영차질…국비 환수는 0건","https://www.newstong.co.kr/view3.aspx?seq=14729297")]},
-{d:"1007",org:"국토교통부",cat:"주택·부동산",stat:"1.3억↓",sl:"막내가 두 돌을 넘기는 순간 줄어드는 정책대출 소득 문턱(맞벌이)",
- title:"두 돌 지나면 대출 절벽, 특공은 방 두 칸",
- sum:"같은 무주택 4인 가구라도 상품에 따라 소득요건이 2억 원에서 7천만 원까지 벌어집니다. 아이가 클수록 주거비는 늘어나는데 정책 지원은 오히려 끊깁니다.",
- ask:"다자녀 가구의 주거사다리 복원(소득요건 정비, 특별공급 평형 개선)",
- news:[]},
-{d:"1007",org:"국토교통부",cat:"철도",gw:1,stat:"국비",sl:"원인자 부담 대신 국가철도망 반영과 국비 지원 요구",
- title:"GTX-B 춘천 연장, 제5차 국가철도망 반영하라",
- sum:"인사청문회에서 장관이 약속한 지방정부·재정당국 협의가 이뤄졌는지 따졌습니다. ‘국비로 바꾸면 무산될 수 있다’는 국토부 관계자 발언에는 협박이냐고 반문했습니다.",
- ask:"GTX-B 춘천 연장을 제5차 국가철도망 구축계획에 반영하고 국비 지원",
- news:[N("철도경제신문","GTX-B, 춘천 연장 논의로 사업 무산?…“협박이냐”","https://www.redaily.co.kr/news/articleView.html?idxno=17745"),N("강원도민일보","[국감 중계석] “GTX-B 춘천 연장 국가 지원 촉구”","https://www.kado.net/news/articleView.html?idxno=2077081"),N("뉴스핌","GTX 연장비 부담 공방…홍지선 “특정 사업 예외 적용 어려워”","https://www.newspim.com/news/view/20261007001446"),N("뉴스핌","허영 의원, 홍익표 수석에 “GTX-B 춘천 연장, 국가철도망 반영해야” 건의","https://www.newspim.com/news/view/20261008001139")]},
-{d:"1007",org:"국토교통부",cat:"철도",stat:"+12.1%",sl:"KTX·SRT 통합 후 2주간 일평균 수송량 증가",
- title:"좌석은 늘고, 교통비는 줄고, 실수에는 너그럽게",
- sum:"지적보다 성과를 먼저 짚었습니다. 선로를 새로 깔지 않고 칸막이만 걷어내 좌석 6.7%, 수송량 12.1%가 늘었습니다. 다만 그 혜택이 경부·호남축에만 머물러서는 안 됩니다.",
- ask:"통합 효과를 강릉선·중앙선·동해선 등 다른 노선으로 확산",
- news:[]},
-
-/* 10.8 도로 */
-{d:"1008",img:"assets/panels/q08.webp",org:"한국도로공사",cat:"도로",stat:"280.9%",sl:"건설비 대비 경인선 통행료 회수율 (2025)",
- title:"원금 2.8배 뽑은 도로, 막혀도 요금은 그대로",
- sum:"회수율 100%를 넘긴 4개 노선이 투자비보다 7조 7,335억 원을 더 걷었습니다. 경인선은 4개 구간이 모두 상습정체(E·F등급)인데 통행료는 그대로입니다.",
- ask:"노선별 회수율 공개, 상습정체 구간 감면, 회수율 연동 차등 요금",
- news:[N("신아일보","건설비 회수 고속도로 4곳, 통행료 7조7000억원 초과 징수","https://www.shinailbo.co.kr/news/articleView.html?idxno=5069808"),N("포인트데일리","건설비 회수한 고속도로 4곳, 투자비보다 7.7조원 더 거둬","https://www.pointdaily.co.kr/news/articleView.html?idxno=321640"),N("데일리환경","회수율 280% 경인선, 정체돼도 통행료는 그대로","https://www.dailyt.co.kr/newsView/dlt202610080010"),N("THE NEWS","건설비 9조6,944억원 들인 고속도로 4곳, 통행료로 17조4,279억원 걷었다","http://www.the-news.co.kr/news/articleView.html?idxno=31386")]},
-{d:"1008",img:"assets/panels/q09.webp",org:"한국도로공사",cat:"도로",stat:"3.1배",sl:"준공 30년 넘은 교량·터널: 1,436개(2026) → 4,495개(2036)",
- title:"고속도로 노후 구조물, ‘노후화 절벽’ 대비해야",
- sum:"30년 넘은 교량 중 C등급이 4년 새 11곳에서 101곳으로 9배 넘게 늘었습니다. 그중 35곳은 ‘예산 확보 후 보수 예정’으로 첫 삽도 못 떴고, 683일째 대기 중인 곳도 있습니다.",
- ask:"연도별 중장기 투자계획과 재원 대책 수립",
- news:[N("MBC강원영동","허영 “10년 뒤 노후 고속도로·교량·터널 3배.. 예산 확보 시급”","https://www.mbceg.co.kr/post/140880"),N("엔사이드","고속도로 ‘노후화 절벽’ 경고음","https://www.reporternside.com/news/articleView.html?idxno=431286"),N("강원신문","허영 의원 “노후 시설·반복 품질 문제”…국토교통 관리체계 점검 촉구","https://www.gwnews.org/news/articleView.html?idxno=271828")]},
-{d:"1008",img:"assets/panels/q10.webp",org:"한국도로공사",cat:"재정·금융",stat:"24%",sl:"원리금 상환액 대비 영업현금흐름 비율 (2025)",
- title:"하루 이자 33억, 벌어서 빚 ¼도 못 갚는 도로공사",
- sum:"금융부채가 4년 만에 31조에서 41.4조 원으로 늘었고, 2030년에는 55조 원이 될 전망입니다. 영업으로 번 돈이 원리금의 4분의 1에도 못 미쳐 빚으로 빚을 갚고 있습니다.",
- ask:"통행료 감면 비용 정부 보전 등 부채 구조 개선",
- news:[N("아주경제","도로공사 금융부채 41조원 돌파…통행료 감면액 2.2조원 정부 보전 ‘0원’","https://www.ajunews.com/view/20261008121021319"),N("데일리안","여야, 도로공사 재정건전성 지적…부채·통행료 미납 도마 위","https://www.dailian.co.kr/news/view/1699643")]},
-{d:"1008",org:"한국도로공사",cat:"도로",stat:"2시간 6분",sl:"어는비 경보 이후 제설제가 뿌려지지 않은 시간",
- title:"제설차 13대는 서 있었다",
- sum:"치사율 전국 1위 서산영덕고속도로에서 5명이 숨진 1월 사고 당일, 경보가 내려지고 제설차 13대가 대기했는데도 2시간 6분 동안 제설제는 한 번도 뿌려지지 않았습니다.",
- ask:"예비살포 기준 준수와 겨울철 고위험 노선 관리 강화",
- news:[]},
-{d:"1008",org:"한국도로공사",cat:"도로",stat:"37.4%",sl:"휴게소 입점업체 평균 수수료율 (2026.5 조사)",
- title:"국민께 약속한 휴게소 개편, 속도감 있게",
- sum:"정부는 수수료를 8~9%로 낮추고 아메리카노를 2,000원 이하로 팔겠다고 발표했습니다. 시범 휴게소 8곳의 12월 운영 약속이 지켜질 수 있는지 확인했습니다.",
- ask:"시범사업 본입찰과 사업자 선정 일정 공개, 약속 시점 이행",
- news:[]},
-{d:"1008",img:"assets/panels/q13.webp",org:"한국도로공사",cat:"도로",gw:1,stat:"0회",sl:"서울-춘천고속도로 가변차로 노면평가",
- title:"서울-춘천고속도로 가변차로, 노면평가 사각지대",
- sum:"하루 7만 1,669대가 지나는 강원 관문입니다. 정체 때 여는 가변차로가 ‘법정 의무가 아니다’라는 이유로 노면평가를 한 번도 받지 않았습니다.",
- ask:"민자도로 운영평가에 가변차로 포장상태 평가 의무화",
- news:[]},
-{d:"1008",img:"assets/panels/q14.webp",org:"한국교통안전공단",cat:"건설·안전",stat:"7명",sl:"자동차 사이버보안(CSMS) 인증·사후관리 담당 인력",
- title:"자동차 해킹 위험 커지는데, 검증 역량은 불확실",
- sum:"16개 제작사가 인증을 받았고 19곳이 심사 중이지만 담당 인력은 7명입니다. 레벨4 자율주행 상용화를 앞두고 인증 이후의 사후관리가 공백입니다.",
- ask:"인증 이후 취약점 대응 점검 체계와 인력 확충",
- news:[]},
-{d:"1008",img:"assets/panels/q15.webp",org:"자동차손해배상진흥원",cat:"재정·금융",stat:"935억",sl:"이관 6년간 결손처분액 (같은 기간 회수액 628억)",
- title:"자배원 이관 6년, 회수보다 결손이 더 많아",
- sum:"‘이관 성과’로 회수액이 37% 늘었다고 했지만 같은 기간 결손처분은 66% 늘었습니다. 6년 동안 한 해도 빠짐없이 결손이 회수보다 많았습니다.",
- ask:"피해자 보상서비스 성과지표 마련과 채권관리 실태 점검",
- news:[N("강원종합뉴스","허영 의원, 뺑소니·무보험 사고 보상금 받아내야 하는데 6년간 934억 결손처분","https://www.kwtotalnews.kr/67699")]},
-
-/* 10.12 LH */
-{d:"1012",img:"assets/panels/q16.webp",org:"LH",cat:"건설·안전",stat:"0원",sl:"담합업체에 청구한 손해배상 875억 원 중 회수액",
- title:"입찰담합 적발돼도 3천억 수주, 손해배상 한 푼도 못 받아",
- sum:"공정위 제재를 받은 감리 담합 업체들이 이후에도 43개 사업, 2,941억 원을 수주했습니다. 감점은 이듬해부터 적용되고, 소송을 걸면 확정판결까지 미뤄집니다.",
- ask:"담합 제재의 입찰 반영 공백 해소와 손해배상 회수",
- news:[N("강원도민일보","[국감 중계석] LH 담합업체 배상금 회수 지적","https://www.kado.net/news/articleView.html?idxno=2077681"),N("MTN","“불법 하도급에 꼼수 수주까지”… 강원 국회의원, 민생경제 전방위 감시","https://news.mtn.co.kr/news-detail/2026093014580593280")]},
-{d:"1012",img:"assets/panels/q17.webp",org:"LH",cat:"건설·안전",stat:"4차",sl:"한 현장에 반복 발급된 품질미흡통지 최대 횟수",
- title:"23개 현장서 품질미흡 경고 반복, 4차 경고까지",
- sum:"3년 반 동안 252개 업체에 385건의 통지가 나갔고, 시공능력 10위권 건설사도 포함됐습니다. 입찰 감점은 최근 1년치만 반영돼 시간이 지나면 이력이 사라집니다.",
- ask:"반복 현장을 별도 관리하는 현장 단위 품질관리 체계",
- news:[N("뉴스핌","LH 품질미흡 경고 반복 건설현장 23곳…허영 “현장 단위 품질관리 체계 필요”","https://www.newspim.com/news/view/20261011000040"),N("아시아경제","[단독] 경고 4번 받고도 ‘부적합 자재’…시평 10위권도 걸린 LH 현장","https://view.asiae.co.kr/article/2026101014094175394"),N("강원일보","LH 건설현장 ‘품질미흡’ 경고받고도 4차례 반복","https://www.kwnews.co.kr/article/20261011500482"),N("한국건설신문","LH 품질미흡 경고에도… ‘반복되는 건설현장’","http://www.conslove.co.kr/news/articleView.html?idxno=89865")]},
-{d:"1012",img:"assets/panels/q18.webp",org:"LH",cat:"주택·부동산",stat:"18→12%",sl:"매입임대 주거취약계층 우선공급률 (2022 → 2025)",
- title:"반지하 참사 뒤 우선공급 30% 약속, 매입임대는 거꾸로",
- sum:"전세임대는 목표를 넘겼지만 매입임대 우선공급은 오히려 줄었습니다. 서울은 계획보다 많이 공급했는데도 반지하·쪽방 주민 몫은 6%뿐이었습니다.",
- ask:"실제 주거 상향 성과를 기준으로 공급체계 보완",
- news:[N("세계일보","서울 매입임대 목표 넘겼는데…반지하·쪽방 주민 몫은 6%뿐","https://www.segye.com/newsView/20261009506043"),N("강원신문","반지하 참사 뒤 ‘우선공급 30%’ 약속…매입임대 실적은 오히려 감소","https://www.gwnews.org/news/articleView.html?idxno=271801"),N("프라임경제","“반지하 참사 후 주거안전망 강화 약속했지만…” 매입임대 우선공급, 역주행","https://www.newsprime.co.kr/news/article/?no=750446")]},
-{d:"1012",img:"assets/panels/q19.webp",org:"LH",cat:"주택·부동산",stat:"1만 3,310호",sl:"법인 임대인 주택의 기존 전세임대 계약 (2026.8)",
- title:"일률적 배제 말고, 법인 전세임대 정교한 위험관리를",
- sum:"법인 임대인 주택은 계약의 4.7%지만 보증사고의 10.5%를 차지합니다. 신규 계약 배제와 별개로, 남아 있는 1만 호가 넘는 기존 계약의 위험관리가 필요합니다.",
- ask:"사고 이력·반환 능력 기반의 임대인 위험관리 기준",
- news:[]},
-{d:"1012",img:"assets/panels/q20.webp",org:"LH",cat:"주택·부동산",stat:"최장 6년",sl:"법은 ‘지체 없이’, 환매권 통지까지 걸린 시간",
- title:"환매권 통지 최장 6년 지연, 관리체계 점검해야",
- sum:"2021년 이후 환매권이 생긴 146필지 중 21.2%가 1년 넘게 통지되지 않았습니다. 통지를 받아야 권리를 행사할 수 있는데, 3년을 넘긴 곳도 12필지입니다.",
- ask:"환매권 발생 즉시 통지하는 관리체계 정비",
- news:[]},
-{d:"1012",img:"assets/panels/q21.webp",org:"LH",cat:"건설·안전",stat:"0회",sl:"투수블록 준공·인계 단계 현장 성능검사",
- title:"투수블록 문제 자초한 LH의 허술한 자재 품질관리",
- sum:"세 현장에서 축구장 두 개 넓이(1만 4,714㎡)를 다시 깔았습니다. 그런데도 LH는 자재 반입 때 시험성적서만 보고, 준공 뒤 성능검사는 한 번도 하지 않았습니다.",
- ask:"최근 5년 시공현장 공개와 제3자 현장 성능 재검증",
- news:[N("강원일보","LH, ‘물 안 빠지는’ 투수블록 깔고도 성능검사 ‘0회’","https://www.kwnews.co.kr/article/20261019501675"),N("더퍼블릭","침수 막는다더니 성능검사는 뒷전...LH 투수블록 관리 허점","https://www.thepublic.kr/news/articleView.html?idxno=322922"),N("강원신문","허영 의원 “LH 투수블록, 준공·인계 성능검사 전무”","https://www.gwnews.org/news/articleView.html?idxno=272086"),N("뉴스클레임","“LH 시공 후 준공·인계 단계 성능 및 하자검사 전무”","https://www.newsclaim.co.kr/news/articleView.html?idxno=3079072")]},
-
-/* 10.13 철도 */
-{d:"1013",img:"assets/panels/q22.webp",org:"코레일",cat:"철도",stat:"722명",sl:"코레일에 합류한 옛 SR 직원",
- title:"법인은 하나, 직급표는 둘",
- sum:"표는 하나가 됐지만 사람은 아직입니다. 직렬 전환·승진제도는 2027년 기한이 있는데, 핵심인 직급 일원화와 임금·복리후생 통합은 기한이 없습니다.",
- ask:"직급·임금체계 통합 일정표와 관리지표 마련",
- news:[N("한국철도일보","허영 “코레일·SR 통합했지만 임금·복지 기준은 제각각”","https://www.korearailroad.kr/news/articleView.html?idxno=204650")]},
-{d:"1013",img:"assets/panels/q23.webp",org:"코레일",cat:"철도",gw:1,stat:"+400원",sl:"ITX-청춘이 KTX-이음으로 바뀔 때 용산~춘천 운임 인상",
- title:"ITX-청춘 → KTX-이음, 요금 대책은 “검토한 바 없음”",
- sum:"춘천~속초선이 개통되면 ITX-청춘 자리를 KTX-이음이 채웁니다. 정기권으로 출퇴근하는 시민을 위한 부담 완화 대책은 아직 검토조차 하지 않았습니다.",
- ask:"출퇴근 정기권 이용자 운임 부담 완화책 마련",
- news:[N("강원도민일보","허영 의원, 강원 철도 현안 ‘송곳 질의’...지역 맞춤형 해법 제안 눈길","https://www.kado.net/news/articleView.html?idxno=2077844")]},
-{d:"1013",img:"assets/panels/q24.webp",org:"코레일",cat:"철도",stat:"2.1배",sl:"무궁화호 대신 ITX-마음을 탈 때 주말 어르신 운임 부담",
- title:"무궁화호 줄이는데, 교통약자 대책은 ‘다음’",
- sum:"주말 무궁화호 좌석은 17.2% 줄고 ITX-마음은 4.6배 늘었습니다. ITX-마음은 49% 비싸고 주말에는 경로할인도 없습니다.",
- ask:"ITX-마음 주말 경로할인 확대와 대체 구간 할인",
- news:[N("뉴스핌","허영 “무궁화호 줄고 ITX-마음 늘어…주말 고령층 운임 부담 2.1배”","https://www.newspim.com/news/view/20261013000617"),N("강원일보","무궁화 줄이고 ITX-마음 늘린 코레일…교통약자 부담 가중","https://www.kwnews.co.kr/article/20261013501677")]},
-{d:"1013",org:"코레일",cat:"철도",gw:1,stat:"+25%",sl:"통합 후 수서역 축 수송량 증가, 혜택은 경부·호남에 집중",
- title:"고속철 통합 효과, 강원도 차별받지 않아야",
- sum:"KTX·SRT 통합으로 늘어난 열차가 경부선과 호남선에 몰렸습니다. 강릉선·동해선 이용객도 통합의 혜택을 누려야 합니다.",
- ask:"강릉선 추가 투입 등 강원권 증편",
- news:[N("강원도민일보","허영 의원, 강원 철도 현안 ‘송곳 질의’...지역 맞춤형 해법 제안 눈길","https://www.kado.net/news/articleView.html?idxno=2077844")]},
-{d:"1013",img:"assets/panels/q26.webp",org:"코레일",cat:"철도",stat:"16.6%",sl:"70대 이상 오프라인(창구·발매기) 예매 비중 (2025)",
- title:"앱 하나로 다 된다는데, 어르신 표는 어디서 삽니까",
- sum:"70대 이상은 지금도 7명 중 1명이 창구에서 표를 삽니다. 명절 승차권은 2020년 이후 창구에서 팔지 않고, 교통약자 사전예매 결제율은 50%에 그쳤습니다.",
- ask:"명절 창구·전화 예매 지원 확대",
- news:[N("뉴스핌","허영 의원 “추석 교통약자 예매 결제율 50.4%…창구·전화 지원 확대해야”","https://www.newspim.com/news/view/20261013001207"),N("세계일보","명절 기차표 예약했지만 절반은 미결제…전화도 하루 290건 미연결","https://www.segye.com/newsView/20261013522397"),N("강원일보","명절 교통약자 기차표 예매 ‘절반 취소’…고령층 디지털 소외 여전","https://www.kwnews.co.kr/article/20261014500766")]},
-{d:"1013",org:"코레일",cat:"철도",stat:"250억",sl:"청구한 보증금 4,586억 원 중 실제 회수액",
- title:"차량 도입 지연에 보증금 회수도 난항",
- sum:"EMU-150 납품 지연으로 계약을 해지했지만 선금보증금 2,854억 원은 한 푼도 받지 못했습니다. ‘보증이 있어 회수할 수 있다’던 지난해 답변과 다릅니다.",
- ask:"차량 사업관리 책임 규명과 보증금 회수 대책",
- news:[N("철도경제신문","다원시스 EMU-150 계약 해지…코레일, 4586억 중 250억만 받아","https://www.redaily.co.kr/news/articleView.html?idxno=17801"),N("더퍼블릭","다원시스 납품 지연에 계약 해지했지만…코레일, 보증금 4586억 중 250억 회수","https://www.thepublic.kr/news/articleView.html?idxno=322244")]},
-{d:"1013",img:"assets/panels/q28.webp",org:"국가철도공단",cat:"철도",stat:"108초",sl:"4년 다투고 531억 더 들여 얻는 경부고속선 단축 시간",
- title:"4년 싸우고 531억 더 들여 단축 108초",
- sum:"공단과 코레일이 실시계획 협의로 4년을 허비해 공기가 48개월 늘었습니다. 최근 5년간 기관 간 협의 지연으로 공기가 늘어난 유일한 사업입니다.",
- ask:"대전북연결선 지연의 책임 규명과 협의 체계 개선",
- news:[N("서울신문","대전 북연결선, 비용 절감·공기 단축 할 수 있었다?","https://go.seoul.co.kr/news/newsView.php?id=20260916019007")]},
-{d:"1013",img:"assets/panels/q29.webp",org:"국가철도공단",cat:"주택·부동산",gw:1,stat:"29년",sl:"공사 중단 뒤 방치된 강촌 콘도미니엄",
- title:"29년 방치 강촌콘도, 진입로 국유지에 막혀",
- sum:"지역특화 재생사업 선정으로 공사 재개 여건이 생겼지만, 진입로 자리 2,213㎡가 국유지입니다. 국유재산 매각 중단 방침으로 절차가 멈췄습니다.",
- ask:"춘천시와 함께 진입로 확보 해법 마련",
- news:[N("강원도민일보","허영 의원, 강원 철도 현안 ‘송곳 질의’...지역 맞춤형 해법 제안 눈길","https://www.kado.net/news/articleView.html?idxno=2077844")]},
-
-/* 10.15 HUG·부동산원 */
-{d:"1015",img:"assets/panels/q30.webp",org:"HUG",cat:"재정·금융",stat:"70.6%",sl:"HUG 신규 PF보증 사업장 중 투자금 비율 5% 이하",
- title:"5억으로 100억짜리 PF 굴리는 사업자들",
- sum:"정부가 두 차례나 PF 위기의 원인으로 ‘저자본·고보증’을 지목했지만, 보증 현장은 정반대로 갔습니다. 신규 보증 사업장의 98%가 투자금 10% 이하였습니다.",
- ask:"자기자본 비율에 따른 보증 심사·보증료 체계 실효화",
- news:[N("SBS Biz","‘내 돈 5% 이하’ PF 사업장 70%…PF 구조개혁 헛바퀴","https://biz.sbs.co.kr/amp/article/20000340039"),N("비즈워치","HUG·HF PF보증, 저자본 사업장 쏠림","https://news.bizwatch.co.kr/article/real_estate/2026/10/15/0035")]},
-{d:"1015",org:"HUG",cat:"재정·금융",stat:"8.7조",sl:"‘주의·경보’ 단계 기업 300곳에 대한 보증·융자 익스포저",
- title:"건설금융 보증 건전성 ① HUG",
- sum:"신용등급이 있는 122곳 중 72%가 CCC+ 이하였고, 상위 10곳에 55.9%가 몰려 있습니다. HUG는 단계별 기업 수만 공개하고 익스포저 규모는 공개하지 않습니다.",
- ask:"모니터링 단계별 익스포저 규모 공시",
- news:[N("세계일보","[단독] HUG ‘주의·경보’ 기업 보증·융자 8.7조…절반 이상 상위 10곳 집중","https://www.segye.com/newsView/20260930518969"),N("AP신문","HUG, ‘주의·경보’ 기업에 8.7조 노출…허영 “익스포저 공개해야”","https://www.apnews.kr/news/articleView.html?idxno=3051640"),N("기계설비신문","허영 의원 “HUG 위험기업 300곳에 8조7000억원 노출”","https://www.kmecnews.co.kr/news/articleView.html?idxno=52101")]},
-{d:"1015",img:"assets/panels/q32.webp",org:"건설공제조합",cat:"재정·금융",stat:"10.92%",sl:"융자금 고정이하 비율 (2022년 4.88%)",
- title:"건설금융 보증 건전성 ② 건설공제조합",
- sum:"융자금은 15% 줄었는데 부실 위험 자산은 90% 늘었습니다. 대손충당금 커버리지는 67.4%로 10년 새 가장 낮습니다. 보도가 나가자 조합은 언론사에 기사 삭제를 요구했습니다.",
- ask:"국토부 감독기준 강화와 자산건전성 공시",
- news:[N("강원일보","건설공제조합, 자산건전성 경고등…융자 15% 감소에도 ‘고정이하’ 금액 90% 증가","https://www.kwnews.co.kr/article/20261006501007"),N("아시아경제","건설공제조합 부실 대출 2배 증가…충당금 비율은 10년래 최저","https://view.asiae.co.kr/article/2026100611273984321"),N("서울경제TV","건설공제조합 융자 줄었는데 부실위험 커져…고정이하 비율 10.92%","https://www.sentv.co.kr/article/view/sentv202610060059"),N("AP신문","건설공제조합 부실위험 90%↑…허영 “숫자 뒤 업계 어려움 봐야”","https://www.apnews.kr/news/articleView.html?idxno=3051768")]},
-{d:"1015",img:"assets/panels/q33.webp",org:"HUG",cat:"주택·부동산",stat:"163호",sl:"10차 모집 공고 780호 중 공고 이후 중대하자 발견",
- title:"든든전세, 공고 내고 나서야 하자 발견",
- sum:"다섯 집 중 한 집꼴로 공고가 나간 뒤 누수 같은 중대하자가 발견됐습니다. HUG는 주택별 하자 이력조차 따로 관리하지 않고 있었습니다.",
- ask:"공고 전 하자 점검과 주택별 하자 이력 관리",
- news:[]},
-{d:"1015",org:"한국부동산원",cat:"주택·부동산",stat:"9년+",sl:"현재 속도로 지방 준공 후 미분양을 CR리츠가 다 사들이는 데 걸리는 시간",
- title:"‘지방 미분양 해법’ CR리츠, 이대로는 부족",
- sum:"CR리츠 매입은 월평균 약 210세대이고, 올해 상반기에는 0건이었습니다. 감정가보다 비싸게 사들이고도 최종 매각 관리는 허술합니다.",
- ask:"CR리츠 사후 관리·감독 강화와 보완책",
- news:[N("뉴스핌","이헌욱 한국부동산원장 “CR리츠, 사후 관리·감독 강화”","https://www.newspim.com/news/view/20261015000895"),N("경남도민일보","미분양 6300가구 넘는 경남, 올해 CR리츠 매입은 ‘0’","https://www.idomin.com/news/articleView.html?idxno=2016634")]},
-{d:"1015",org:"한국부동산원",cat:"주택·부동산",stat:"56곳",sl:"최근 3년 공사비 검증 의무를 지키지 않은 정비사업장",
- title:"재개발·재건축 공사비 검증, 제재 없이 의무만?",
- sum:"공사비가 일정 수준 이상 오르면 검증을 ‘요청하여야’ 하지만, 어겨도 제재가 없습니다. 그 부담은 고스란히 조합원의 추가분담금이 됩니다.",
- ask:"검증 미이행 시 과태료 부과 (도시정비법 개정안 대표발의)",
- news:[N("일간투데이","허영 의원, 재개발·재건축 공사비 검증 제재 추진","https://www.dtoday.co.kr/news/articleView.html?idxno=789696"),N("허프포스트코리아","재개발·재건축 ‘공사비 검증’ 미이행 시 사업시행자에게 과태료 부과","https://www.huffingtonpost.kr/article/260139"),N("국제뉴스","허영, “공사비 검증은 재산권 지키는 최소 안전장치”","https://www.gukjenews.com/news/articleView.html?idxno=3683395")]},
-
-/* 10.22 항공 */
-{d:"1022",img:"assets/panels/q36.webp",org:"인천국제공항공사",cat:"항공",stat:"5번",sl:"2011년 이후 국정감사에서 하늘고 지원이 지적된 횟수",
- title:"국회와 정부의 지적에 아랑곳 않는 인천공항공사",
- sum:"2023년 국감에서 하늘고 운영비 지원을 지적했는데, 공사는 그해 12월 5억 원을 추가로 지급했습니다. 감사원과 국회가 반복해 지적해도 바뀐 것이 없습니다.",
- ask:"하늘고 지원의 근거와 기준 마련",
- news:[N("일간경기","인천공항공사, 감사원·국회 지적 무시하고 ‘하늘고’ 지원","https://www.1gan.co.kr/news/articleView.html?idxno=412311")]},
-{d:"1022",img:"assets/panels/q37.webp",org:"인천국제공항공사",cat:"항공",stat:"100mL",sl:"2L까지 판독하는 CT 장비를 두고도 20년째 그대로인 기준",
- title:"가방 열고, 꺼내고, 버리고: 액체류 100mL 규제가 만드는 병목",
- sum:"1,287억 원을 들인 CT 84대가 모두 최고 등급이지만 고시는 2006년 기준 그대로입니다. 지난해 버려진 액체류만 469만 개, 처리비는 연 6억 3천만 원입니다.",
- ask:"장비 인증에 맞춘 액체류 반입기준 고시 개정",
- news:[N("이데일리","인천공항, 2ℓ 액체류 판독하면서 100㎖만 반입 허용 “개선하라”","https://edaily.co.kr/News/Read?mediaCodeNo=257&newsId=04100006645615544"),N("강원도민일보","공항 보안검색 ‘액체류 반입기준’ 개선 촉구","https://www.kado.net/news/articleView.html?idxno=2079998"),N("한국면세뉴스","인천공항, 1287억 CT 도입에도 ‘100mL 규정’…국감서 운영 효율 질타","https://www.kdfnews.com/news/articleView.html?idxno=189750")]},
-{d:"1022",img:"assets/panels/q38.webp",org:"인천국제공항공사",cat:"항공",stat:"−24.1%",sl:"2019년 대비 공항버스 승객 (항공여객은 +4.1%)",
- title:"버스가 떠난 자리, 자가용이 채웠다",
- sum:"최근 3년 명절 여섯 번 모두 주차장이 100%를 넘었고, 연말에는 169%까지 찼습니다. 주차장을 늘리기보다 버스와 요금부터 손봐야 합니다.",
- ask:"공항버스 노선·요금 개선 중심의 접근교통 대책",
- news:[N("세계일보","국감서 ‘인천공항 운영 비효율성’ 도마…“국민 불편 초래”","https://www.segye.com/newsView/20261022514116")]},
-{d:"1022",img:"assets/panels/q39.webp",org:"한국공항공사",cat:"항공",gw:1,stat:"0건",sl:"공사와 강원도가 22번 만나 함께 만든 관광상품",
- title:"24년 만에 다시 상하이, 손님 맞을 준비는 ‘빈손’",
- sum:"12월 양양-상하이 노선이 다시 뜹니다. 그런데 최근 3년간 공사와 강원도가 함께 한 일은 입국 환영행사뿐이고, 공동 예산은 0원입니다.",
- ask:"‘양양 인바운드 공동 패키지’ 협약과 유치 예산 복원",
- news:[N("강원도민일보","허영 “양양공항 상하이 노선 재개, 외국인 관광객 유치 협력 시급”","https://www.kado.net/news/articleView.html?idxno=2080368"),N("강원신문","양양공항 상하이 노선 재개 앞두고 관광상품 ‘전무’…안전 대책도 도마 위","https://www.gwnews.org/news/articleView.html?idxno=272064")]},
-{d:"1022",img:"assets/panels/q40.webp",org:"한국공항공사",cat:"항공",gw:1,stat:"39층",sl:"선회접근 경로를 막아 활주로 한 방향을 못 쓰게 만든 건물",
- title:"39층 건물에 막힌 하늘길, ‘반쪽 활주로’",
- sum:"낙산해수욕장 앞 180m 숙박시설 때문에 남동풍이 불면 속초 방향으로 착륙할 수 없습니다. 지난해 회항·결항 25건 중 12건이 이 때문이었습니다.",
- ask:"상하이 첫 편 회항 대비책, 위성항법 접근 절차 조기 시행",
- news:[N("노컷뉴스","허영 의원 “양양공항 노선 재개 준비 부실, 운항 안전대책 시급”","https://nocutnews.co.kr/news/6596033"),N("엔사이드","“상하이 첫 승객이 김포로 갈 수도”…허영 의원, 양양공항 준비상태 정조준","https://www.reporternside.com/news/articleView.html?idxno=433336"),N("강원일보","양양국제공항, 낙산에 들어선 고층건물로 한방향 활주로 사용 불가","https://www.kwnews.co.kr/article/20260625500510")]},
-
-/* 10.23 종합감사 */
-{d:"1023",img:"assets/panels/q41.webp",org:"국토교통부",cat:"주택·부동산",stat:"135만 호",sl:"등록 민간임대주택 (전체 임차가구의 16%)",
- title:"등록 민간임대주택, 정부 약속이 너무 자주 바뀐다",
- sum:"사업자에게는 8년, 10년씩 의무를 지키라고 하면서 정부가 약속한 세제 혜택은 수시로 바뀌었습니다. 매수자 제한 탓에 실제 거래가 가능할지도 의문입니다.",
- ask:"민간임대 세제의 일관성과 예측 가능성 확보",
- news:[]},
-{d:"1023",org:"국토교통부",cat:"건설·안전",stat:"85명",sl:"최근 5년 공장·창고 화재 사망자 (부상 1,103명)",
- title:"반복되는 공장·창고 화재와 소방관 희생, 안전기준 강화 시급",
- sum:"2020년 국감에서 샌드위치 패널의 화재 취약성을 지적한 지 6년이 지났지만, 올해도 완도 냉동창고와 부천 공장에서 소방관이 순직했습니다.",
- ask:"건축물 대피 골든타임 확보를 위한 안전기준 강화",
- news:[N("머니투데이","허영 “5년간 공장 등 화재 사상자 1100여명… 희생 방지 대책 시급”","https://www.mt.co.kr/politics/2026/10/23/2026102311030146663")]},
-{d:"1023",img:"assets/panels/q43.webp",org:"국토교통부",cat:"항공",stat:"49.8%",sl:"인천공항공사 기부금 521억 원 중 직장어린이집·하늘고 몫",
- title:"인천공항공사의 방만한 기부금, 국토부도 책임 있다",
- sum:"3년간 기부금의 절반이 공사와 자회사 직원 자녀가 다니는 어린이집과 학교로 갔습니다. 국토부도 감독 책임에서 자유로울 수 없습니다.",
- ask:"기부금 집행 기준과 재단 운영 구조 재검토",
- news:[N("강원일보","인천공항공사 기부금 절반, ‘우리 애들’ 자사 어린이집·하늘고에 쏠렸다","https://www.kwnews.co.kr/article/20261022500376"),N("THE NEWS","인천공항공사 기부금 520억원 중 절반이 ‘자체 설립’ 어린이집·학교로","http://www.the-news.co.kr/news/articleView.html?idxno=31697"),N("엔사이드","기부금 절반이 ‘우리 어린이집·우리 학교’로…인국공 520억 사용처 논란","https://www.reporternside.com/news/articleView.html?idxno=433182")]},
-{d:"1023",img:"assets/panels/q44.webp",org:"국토교통부",cat:"재정·금융",stat:"2,585억",sl:"아직 돌려받지 못한 정부보장사업 구상금 (82.6%가 10년 이상)",
- title:"뺑소니·무보험 사고 구상금 2,585억 미회수",
- sum:"정부가 피해자에게 먼저 보상하고 돌려받지 못한 돈입니다. 소송·압류는 두 배로 늘었지만 회수액은 매년 잔액의 4~5%에 머뭅니다.",
- ask:"조치 건수가 아닌 실제 회수액 기준의 채권관리",
- news:[N("미주중앙일보","[단독] 정부가 대신 갚은 뺑소니 보상금 수천억…82%는 10년 넘게 미회수","https://www.koreadaily.com/article/20261006224116435")]},
-{d:"1023",org:"LH",cat:"주택·부동산",stat:"150mm",sl:"청년 원룸형 임대주택의 세대 간 벽 두께 (분양주택은 200mm 이상)",
- title:"벽간소음은 살피지도 않는 LH, 원룸 차음기준부터",
- sum:"분양주택은 세대 간 차음 성능을 공개하지만 임대주택은 공개하지 않습니다. 벽간소음 민원은 따로 집계조차 하지 않았습니다.",
- ask:"임대주택 차음 기준 마련과 성능 공개",
- news:[N("뉴스핌","이성훈 LH 사장 “임대주택 차음성능·품질관리 꼼꼼히 챙길 것”","https://www.newspim.com/news/view/20261023000433"),N("조세금융신문","LH 임대주택 벽간소음 관리 사각지대…민원 통계도 미흡","https://www.tfmedia.co.kr/news/article.html?no=208299")]},
-{d:"1023",img:"assets/panels/q46.webp",org:"코레일",cat:"철도",stat:"1.2%",sl:"경부선 KTX 낮 시간대 청년할인 적용 열차 비율 (2022년 19.5%)",
- title:"KTX 청년할인, 말로만 ‘힘내라 청춘’ 실상은 ‘빈자리 떨이’",
- sum:"정부는 청년 교통비 부담을 덜겠다고 하는데, 코레일 청년할인은 빈자리가 남는 열차에만 붙었습니다. 낮 시간 할인은 사실상 사라졌습니다.",
- ask:"시간대별 청년할인 최소 배정 기준 마련",
- news:[N("한국철도일보","KTX 청년 할인열차 19.5%→1.2% 급감…“낮시간 할인 사실상 불가능”","https://www.korearailroad.kr/news/articleView.html?idxno=209569"),N("강원종합뉴스","허영 의원, KTX 청년할인 낮 시간 사실상 실종 강릉선도 100대 중 8대만 혜택","https://www.kwtotalnews.kr/68535"),N("강원신문","청년 KTX 할인은 줄고, 공기업 기부금은 특정 기관에 집중","https://www.gwnews.org/news/articleView.html?idxno=272045")]},
-{d:"1023",img:"assets/panels/q47.webp",org:"코레일 · 국가철도공단",cat:"철도",gw:1,stat:"75→217회",sl:"GTX-B 개통 후 경춘선 공용구간 하루 운행 횟수",
- title:"GTX-B 경춘선, 선로가 모자란 게 아니라 협의가 멈춰 있다",
- sum:"상봉~마석 22.9km에 열차가 세 배로 늘어납니다. 코레일은 1년간 네 차례 의견을 냈지만 공단과 손발이 맞지 않았습니다.",
- ask:"공단·코레일 공동 선로용량 대책 수립",
- news:[]},
-{d:"1023",org:"코레일",cat:"철도",stat:"무응찰",sl:"EMU-150 146량(3,987억 원) 재발주 2차 공고와 재공고 결과",
- title:"철도차량 입찰, 이행능력 검증과 경쟁 확보 함께 가야",
- sum:"다원시스 사태 이후 강화된 입찰 요건이 사실상 한 회사만 응찰할 수 있는 구조가 됐습니다. 단독 입찰과 결렬에 이어 두 번 연속 무응찰이 나왔습니다.",
- ask:"검증은 유지하되 경쟁이 가능한 입찰 요건 재설계",
- news:[]},
-];
-
-
-ITEMS.forEach((it,i) => {
-  it.no = String(i+1).padStart(2,"0");
-  it.day = DAYS.find(d => d.id === it.d);
-  it.text = [it.title, it.org, it.cat, it.sum, it.ask, it.sl].join(" ").toLowerCase();
-});
-
-const $ = s => document.querySelector(s);
-const esc = s => String(s).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
-const S = {tab:"all", day:"", cat:"", q:"", open:null};
-
-const TABS = [
-  {k:"all",   name:"전체",      f:() => true},
-  {k:"news",  name:"보도 있음", f:it => it.news.length>0},
-  {k:"gw",    name:"춘천·강원", f:it => !!it.gw}
-];
-
-function okBase(it){
-  if (S.day && it.d !== S.day) return false;
-  if (S.cat && it.cat !== S.cat) return false;
-  if (S.q && !it.text.includes(S.q)) return false;
-  return true;
-}
-
-function drawTabs(){
-  $("#tabs").innerHTML = TABS.map(t => {
-    const n = ITEMS.filter(it => okBase(it) && t.f(it)).length;
-    return `<button class="tab" role="tab" type="button" data-k="${t.k}" aria-selected="${S.tab===t.k}">${t.name}<span class="n num">${n}</span></button>`;
-  }).join("");
-}
-
-function drawDays(){
-  $("#days").innerHTML = `<button class="day" type="button" data-d="" aria-pressed="${!S.day}"><b>전체</b><span>10.7–10.23</span></button>` +
-    DAYS.map(d => `<button class="day" type="button" data-d="${d.id}" aria-pressed="${S.day===d.id}"><b>${d.m}(${d.w})</b><span>${esc(d.title)}</span></button>`).join("");
-}
-
-function detailHTML(it){
-  const labels = `<span class="lb">${esc(it.cat)}</span>` + (it.gw ? `<span class="lb gw">춘천·강원</span>` : "");
-  const extra = (it.reply ? `<div class="ask"><small>기관 답변</small>${esc(it.reply)}</div>` : "") +
-                (it.result ? `<div class="ask"><small>이행 결과</small>${esc(it.result)}</div>` : "");
-  const news = it.news.length
-    ? `<h4>관련 보도 ${it.news.length}건</h4><ul class="news">${it.news.map(n => `<li><a href="${esc(n.u)}" target="_blank" rel="noopener"><span class="o">${esc(n.o)}</span><span class="t">${esc(n.t)}</span></a></li>`).join("")}</ul>`
-    : "";
-  return (it.img ? `<figure><img src="${it.img}" alt="${esc(it.title)} 질의 패널"></figure>` : "") +
-    `<div class="in">
-      <div class="labels">${labels}</div>
-      <h3 id="dlgT">${esc(it.title)}</h3>
-      <p class="meta">#${it.no}<i>·</i>${it.day.m}(${it.day.w}) ${esc(it.day.title)} 감사<i>·</i>${esc(it.org)}</p>
-      <p>${esc(it.sum)}</p>
-      <div class="ask"><small>요구사항</small>${esc(it.ask)}</div>${extra}
-      ${news}
-      <button class="share" type="button" data-share="${it.no}">이 질의 링크 복사</button>
-    </div>`;
-}
-
-function drawRows(){
-  const tf = TABS.find(t => t.k === S.tab).f;
-  const list = ITEMS.filter(it => okBase(it) && tf(it));
-  $("#rows").innerHTML = list.length ? list.map(it => {
-    const labels = `<span class="lb">${esc(it.cat)}</span>` + (it.gw ? `<span class="lb gw">춘천·강원</span>` : "") + (it.news.length ? `<span class="lb done">보도 ${it.news.length}</span>` : "");
-    const thumb = it.img
-      ? `<div class="thumb"><img src="${it.img}" alt="" loading="lazy" decoding="async"></div>`
-      : `<div class="thumb txt"><b class="num">${esc(it.stat)}</b><span>${esc(it.sl)}</span></div>`;
-    return `<li class="card" id="q${it.no}"><button class="cb" type="button" data-no="${it.no}">${thumb}
-      <span class="cbody"><span class="labels">${labels}</span><span class="rt">${esc(it.title)}</span>
-        <span class="meta num">${it.day.m} ${esc(it.day.title)}<i>·</i>${esc(it.org)}</span></span></button></li>`;
-  }).join("") : `<li class="none">조건에 맞는 질의가 없습니다.</li>`;
-}
-
-function render(){ drawTabs(); drawDays(); drawRows(); }
-
-function openItem(no, scroll){
-  const it = ITEMS.find(x => x.no === no);
-  if (!it) return;
-  const tf = TABS.find(t => t.k === S.tab).f;
-  if (!(okBase(it) && tf(it))) { S.tab="all"; S.day=""; S.cat=""; S.q=""; $("#q").value=""; $("#cat").value=""; render(); }
-  if (scroll) document.getElementById("q"+no).scrollIntoView({block:"center"});
-  $("#dlgBody").innerHTML = detailHTML(it);
-  history.replaceState(null, "", "#q"+no);
-  const d = $("#dlg"); if (!d.open) d.showModal(); d.scrollTop = 0;
-}
-
-$("#tabs").addEventListener("click", e => { const b = e.target.closest(".tab"); if (b){ S.tab = b.dataset.k; render(); } });
-$("#days").addEventListener("click", e => { const b = e.target.closest(".day"); if (b){ S.day = b.dataset.d; render(); } });
-$("#cat").innerHTML += CATS.map(c => `<option>${c}</option>`).join("");
-$("#cat").addEventListener("change", e => { S.cat = e.target.value; render(); });
-$("#q").addEventListener("input", e => { S.q = e.target.value.trim().toLowerCase(); render(); });
-$("#rows").addEventListener("click", e => { const b = e.target.closest(".cb"); if (b) openItem(b.dataset.no); });
-$("#dlg").addEventListener("click", e => {
-  const sh = e.target.closest("[data-share]");
-  if (sh){
-    const url = location.href.split("#")[0] + "#q" + sh.dataset.share;
-    (navigator.clipboard ? navigator.clipboard.writeText(url) : Promise.reject()).then(() => sh.textContent = "복사했습니다", () => sh.textContent = url);
-    return;
-  }
-  if (e.target === e.currentTarget || e.target.closest("[data-close]")) e.currentTarget.close();
-});
-$("#dlg").addEventListener("close", () => history.replaceState(null, "", location.pathname));
-
-/* 강원 */
-$("#gwGrid").innerHTML = ITEMS.filter(it => it.gw).map(it =>
-  `<a class="gw-card" href="#q${it.no}" data-no="${it.no}"><span class="k">${it.day.m} · ${esc(it.org)}</span><b class="num">${esc(it.stat)}</b><span class="t">${esc(it.title)}</span></a>`).join("");
-$("#gwGrid").addEventListener("click", e => { const a = e.target.closest(".gw-card"); if (a){ e.preventDefault(); openItem(a.dataset.no, true); } });
-
-/* 언론 보도 */
-const PRESS = [], seen = new Set();
-ITEMS.forEach(it => it.news.forEach(n => { if (!seen.has(n.u)){ seen.add(n.u); PRESS.push({...n, no:it.no}); } }));
-const SHOW = 15;
-$("#pressRows").innerHTML = PRESS.map((n,i) => `<tr${i>=SHOW?" hidden":""}><td class="o">${esc(n.o)}</td><td><a class="t" href="${esc(n.u)}" target="_blank" rel="noopener">${esc(n.t)}</a></td><td class="q"><a href="#q${n.no}" data-no="${n.no}">#${n.no}</a></td></tr>`).join("");
-$("#pressMeta").textContent = `기사 ${PRESS.length}건 · 제목을 누르면 원문으로 이동합니다.`;
-if (PRESS.length <= SHOW) $("#moreBtn").parentElement.remove();
-$("#moreBtn").onclick = () => { document.querySelectorAll("#pressRows tr[hidden]").forEach(tr => tr.hidden = false); $("#moreBtn").parentElement.remove(); };
-$("#pressRows").addEventListener("click", e => { const a = e.target.closest("td.q a"); if (a){ e.preventDefault(); openItem(a.dataset.no, true); } });
-
-
-
-render();
-const m = location.hash.match(/^#q(\d{2})$/);
-if (m) openItem(m[1], true);
-addEventListener("hashchange", () => { const h = location.hash.match(/^#q(\d{2})$/); if (h) openItem(h[1], true); });
-</script>
+  <script src="data.js"></script>
+  <script src="app.js"></script>
 </body>
 </html>
