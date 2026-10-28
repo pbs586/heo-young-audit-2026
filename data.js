@@ -210,15 +210,9 @@ window.AUDIT_DATA = {
         }
       ],
       "naverSearchUrl": "https://search.naver.com/search.naver?where=news&query=%ED%97%88%EC%98%81%20%EA%B1%B4%EC%84%A4%EA%B3%B5%EC%A0%9C%EC%A1%B0%ED%95%A9%20%EA%B1%B4%EC%A0%84%EC%84%B1",
-      "slides": [
-        {
-          "src": "slides/1023_BIN0002.webp",
-          "caption": "",
-          "isOriginal": true
-        }
-      ],
-      "thumb": "slides/1023_BIN0002.webp",
-      "slideCount": 1
+      "slides": [],
+      "thumb": "",
+      "slideCount": 0
     },
     {
       "id": "1007-2",
@@ -783,15 +777,9 @@ window.AUDIT_DATA = {
         }
       ],
       "naverSearchUrl": "https://search.naver.com/search.naver?where=news&query=%ED%97%88%EC%98%81%20GTX-B%20%EC%B6%98%EC%B2%9C%20%EC%97%B0%EC%9E%A5",
-      "slides": [
-        {
-          "src": "slides/1023_BIN000F.webp",
-          "caption": "",
-          "isOriginal": true
-        }
-      ],
-      "thumb": "slides/1023_BIN000F.webp",
-      "slideCount": 1
+      "slides": [],
+      "thumb": "",
+      "slideCount": 0
     },
     {
       "id": "1007-8",
@@ -2955,15 +2943,9 @@ window.AUDIT_DATA = {
         }
       ],
       "naverSearchUrl": "https://search.naver.com/search.naver?where=news&query=%ED%97%88%EC%98%81%20%EA%B1%B4%EC%84%A4%EA%B3%B5%EC%A0%9C%EC%A1%B0%ED%95%A9%20%EA%B3%A0%EC%A0%95%EC%9D%B4%ED%95%98%20%EB%B6%80%EC%8B%A4",
-      "slides": [
-        {
-          "src": "slides/1023_BIN0002.webp",
-          "caption": "",
-          "isOriginal": true
-        }
-      ],
-      "thumb": "slides/1023_BIN0002.webp",
-      "slideCount": 1
+      "slides": [],
+      "thumb": "",
+      "slideCount": 0
     },
     {
       "id": "1015-4",

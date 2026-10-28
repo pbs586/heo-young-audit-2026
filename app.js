@@ -18,13 +18,13 @@
   };
 
   const STATION_META = {
-    "1007": { stnCode: "1일차", stationName: "국토교통부", index: 0 },
-    "1008": { stnCode: "2일차", stationName: "도로·교통안전", index: 1 },
-    "1012": { stnCode: "3일차", stationName: "LH·안전관리", index: 2 },
-    "1013": { stnCode: "4일차", stationName: "철도·코레일", index: 3 },
-    "1015": { stnCode: "5일차", stationName: "부동산·HUG", index: 4 },
-    "1022": { stnCode: "6일차", stationName: "인천·한국공항", index: 5 },
-    "1023": { stnCode: "7일차", stationName: "종합감사", index: 6 }
+    "1007": { stnCode: "10.07", stationName: "국토교통부", index: 0 },
+    "1008": { stnCode: "10.08", stationName: "도로·교통안전", index: 1 },
+    "1012": { stnCode: "10.12", stationName: "LH·안전관리", index: 2 },
+    "1013": { stnCode: "10.13", stationName: "철도·코레일", index: 3 },
+    "1015": { stnCode: "10.15", stationName: "부동산·HUG", index: 4 },
+    "1022": { stnCode: "10.22", stationName: "인천·한국공항", index: 5 },
+    "1023": { stnCode: "10.23", stationName: "종합감사", index: 6 }
   };
 
   const LINE_META = {
@@ -194,7 +194,7 @@
     });
   }
 
-  // 1. 7개 일차 타임라인 렌더링
+  // 1. 감사일 타임라인 렌더링
   function renderStationMap() {
     if (!stationNodesEl) return;
 
@@ -221,7 +221,7 @@
 
     stationNodesEl.innerHTML = schedules
       .map((s, idx) => {
-        const meta = STATION_META[s.code] || { stnCode: `${idx + 1}일차`, stationName: s.title };
+        const meta = STATION_META[s.code] || { stnCode: s.shortDate, stationName: s.title };
         const isActive = state.selectedDate === s.code;
         const isPassed = state.selectedDate === "ALL" || (activeIdx >= 0 && idx < activeIdx);
 
@@ -237,7 +237,6 @@
               <span class="station-marker-core"></span>
             </div>
             <div class="station-card-plate">
-              <span class="station-code">${escapeHtml(meta.stnCode)}</span>
               <span class="station-date">${escapeHtml(s.shortDate)}</span>
               <span class="station-name">${escapeHtml(meta.stationName)}</span>
               <span class="station-count-pill">${s.count}건</span>
@@ -269,11 +268,10 @@
     stationSignboardEl.style.display = "grid";
     const sched = DATA.schedules.find((s) => s.code === state.selectedDate);
     if (!sched) return;
-    const meta = STATION_META[sched.code] || { stnCode: "일차", stationName: sched.title };
+    const meta = STATION_META[sched.code] || { stnCode: "", stationName: sched.title };
 
     stationSignboardEl.innerHTML = `
       <div class="signboard-badge-box">
-        <span class="signboard-stn-num">${escapeHtml(meta.stnCode)}</span>
         <div class="signboard-stn-titles">
           <span class="signboard-stn-date">${escapeHtml(sched.date)}</span>
           <span class="signboard-stn-name">${escapeHtml(sched.title)}</span>
@@ -564,7 +562,7 @@
         <table class="ledger-table">
           <thead>
             <tr>
-              <th>일차 · 기관</th>
+              <th>날짜 · 기관</th>
               <th>분야</th>
               <th>제목</th>
               <th>핵심 내용</th>
@@ -627,7 +625,7 @@
     const stn = STATION_META[item.dateCode] || { stnCode: "감사", stationName: item.shortDate };
 
     modalBadgesEl.innerHTML = `
-      <span class="dossier-badge">${escapeHtml(stn.stnCode)} · ${escapeHtml(item.shortDate)}</span>
+      <span class="dossier-badge">${escapeHtml(item.shortDate)}</span>
       <span class="dossier-badge">${escapeHtml(item.themeName)}</span>
     `;
 
