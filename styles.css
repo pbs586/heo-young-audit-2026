@@ -2611,17 +2611,7 @@ body {
   color: var(--text-primary);
 }
 
-.slide-orig-link {
-  font-size: 0.78rem;
-  font-weight: 700;
-  color: var(--brand-600);
-  text-decoration: none;
-  white-space: nowrap;
-}
 
-.slide-orig-link:hover {
-  text-decoration: underline;
-}
 
 .modal-thumb-strip {
   display: flex;

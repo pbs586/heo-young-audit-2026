@@ -760,7 +760,6 @@
 
           <div class="modal-slide-caption-bar">
             <span id="modalSlideCaption" class="modal-slide-caption">${escapeHtml(currentSlide.caption || item.title)}</span>
-            <a href="${escapeHtml(currentSlide.src)}" target="_blank" rel="noopener noreferrer" id="modalSlideOrigLink" class="slide-orig-link">원본 보기 ↗</a>
           </div>
 
           ${
@@ -857,11 +856,9 @@
         const imgEl = document.getElementById("modalMainSlideImg");
         const numEl = document.getElementById("modalSlideNum");
         const capEl = document.getElementById("modalSlideCaption");
-        const origEl = document.getElementById("modalSlideOrigLink");
         if (imgEl) imgEl.src = sl.src;
         if (numEl) numEl.textContent = `${state.activeSlideIndex + 1} / ${slides.length}`;
         if (capEl) capEl.textContent = sl.caption || item.title;
-        if (origEl) origEl.href = sl.src;
         modalContentEl.querySelectorAll(".modal-thumb-btn").forEach((b, bIdx) => {
           b.classList.toggle("active", bIdx === state.activeSlideIndex);
         });
