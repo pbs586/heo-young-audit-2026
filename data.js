@@ -10,7 +10,7 @@ window.AUDIT_DATA = {
     "totalDays": 7,
     "totalItems": 51,
     "totalAgencies": 27,
-    "totalSlides": 142
+    "totalSlides": 131
   },
   "schedules": [
     {
@@ -725,18 +725,13 @@ window.AUDIT_DATA = {
       "naverSearchUrl": "https://search.naver.com/search.naver?where=news&query=%EB%8B%A4%EC%9E%90%EB%85%80%20%EB%94%94%EB%94%A4%EB%8F%8C%20%EB%8C%80%EC%B6%9C%20%EA%B5%AD%ED%86%A0%EB%B6%80",
       "slides": [
         {
-          "src": "slides/1007_SLIDE_MULTICHILD.webp",
-          "caption": "",
-          "isOriginal": false
-        },
-        {
           "src": "slides/1007_BIN0008.webp",
           "caption": "",
           "isOriginal": true
         }
       ],
-      "thumb": "slides/1007_SLIDE_MULTICHILD.webp",
-      "slideCount": 2
+      "thumb": "slides/1007_BIN0008.webp",
+      "slideCount": 1
     },
     {
       "id": "1007-7",
@@ -790,18 +785,13 @@ window.AUDIT_DATA = {
       "naverSearchUrl": "https://search.naver.com/search.naver?where=news&query=%ED%97%88%EC%98%81%20GTX-B%20%EC%B6%98%EC%B2%9C%20%EC%97%B0%EC%9E%A5",
       "slides": [
         {
-          "src": "slides/1007_SLIDE_GTXB.webp",
-          "caption": "",
-          "isOriginal": false
-        },
-        {
           "src": "slides/1023_BIN000F.webp",
           "caption": "",
           "isOriginal": true
         }
       ],
-      "thumb": "slides/1007_SLIDE_GTXB.webp",
-      "slideCount": 2
+      "thumb": "slides/1023_BIN000F.webp",
+      "slideCount": 1
     },
     {
       "id": "1007-8",
@@ -875,15 +865,9 @@ window.AUDIT_DATA = {
       },
       "news": [],
       "naverSearchUrl": "https://search.naver.com/search.naver?where=news&query=%ED%97%88%EC%98%81%20%EA%B5%AD%ED%86%A0%EB%B6%80%20%EA%B5%90%ED%86%B5%EC%A0%95%EC%B1%85%20KTX",
-      "slides": [
-        {
-          "src": "slides/1007_SLIDE_TRANSPORT3.webp",
-          "caption": "",
-          "isOriginal": false
-        }
-      ],
-      "thumb": "slides/1007_SLIDE_TRANSPORT3.webp",
-      "slideCount": 1
+      "slides": [],
+      "thumb": "",
+      "slideCount": 0
     },
     {
       "id": "1008-1",
@@ -1392,15 +1376,9 @@ window.AUDIT_DATA = {
       "table": null,
       "news": [],
       "naverSearchUrl": "https://search.naver.com/search.naver?where=news&query=%ED%97%88%EC%98%81%20%EA%B3%A0%EC%86%8D%EB%8F%84%EB%A1%9C%20%ED%9C%B4%EA%B2%8C%EC%86%8C%20%EB%8F%84%EC%84%B1%ED%9A%8C",
-      "slides": [
-        {
-          "src": "slides/1008_SLIDE_RESTAREA.webp",
-          "caption": "",
-          "isOriginal": false
-        }
-      ],
-      "thumb": "slides/1008_SLIDE_RESTAREA.webp",
-      "slideCount": 1
+      "slides": [],
+      "thumb": "",
+      "slideCount": 0
     },
     {
       "id": "1008-6",
@@ -2347,15 +2325,9 @@ window.AUDIT_DATA = {
         }
       ],
       "naverSearchUrl": "https://search.naver.com/search.naver?where=news&query=%ED%97%88%EC%98%81%20%EA%B0%95%EB%A6%89%EC%84%A0",
-      "slides": [
-        {
-          "src": "slides/1013_SLIDE_GANGNEUNG.webp",
-          "caption": "",
-          "isOriginal": false
-        }
-      ],
-      "thumb": "slides/1013_SLIDE_GANGNEUNG.webp",
-      "slideCount": 1
+      "slides": [],
+      "thumb": "",
+      "slideCount": 0
     },
     {
       "id": "1013-5",
@@ -2506,15 +2478,9 @@ window.AUDIT_DATA = {
         }
       ],
       "naverSearchUrl": "https://search.naver.com/search.naver?where=news&query=%ED%97%88%EC%98%81%20%EB%8B%A4%EC%9B%90%EC%8B%9C%EC%8A%A4",
-      "slides": [
-        {
-          "src": "slides/1013_SLIDE_EMU150.webp",
-          "caption": "",
-          "isOriginal": false
-        }
-      ],
-      "thumb": "slides/1013_SLIDE_EMU150.webp",
-      "slideCount": 1
+      "slides": [],
+      "thumb": "",
+      "slideCount": 0
     },
     {
       "id": "1013-7",
@@ -2645,11 +2611,6 @@ window.AUDIT_DATA = {
           "isOriginal": true
         },
         {
-          "src": "slides/1013_SLIDE_GANGCHON_RESULT.webp",
-          "caption": "",
-          "isOriginal": false
-        },
-        {
           "src": "slides/1013_BIN000E.webp",
           "caption": "",
           "isOriginal": true
@@ -2661,7 +2622,7 @@ window.AUDIT_DATA = {
         }
       ],
       "thumb": "slides/1013_BIN000D.webp",
-      "slideCount": 4,
+      "slideCount": 3,
       "tables": [
         [
           [
@@ -2876,15 +2837,9 @@ window.AUDIT_DATA = {
         }
       ],
       "naverSearchUrl": "https://search.naver.com/search.naver?where=news&query=%ED%97%88%EC%98%81%20HUG%20%EC%A3%BC%EC%9D%98%20%EA%B2%BD%EB%B3%B4%20%EA%B8%B0%EC%97%85",
-      "slides": [
-        {
-          "src": "slides/1015_SLIDE_HUG87.webp",
-          "caption": "",
-          "isOriginal": false
-        }
-      ],
-      "thumb": "slides/1015_SLIDE_HUG87.webp",
-      "slideCount": 1
+      "slides": [],
+      "thumb": "",
+      "slideCount": 0
     },
     {
       "id": "1015-3",
@@ -3213,15 +3168,9 @@ window.AUDIT_DATA = {
         }
       ],
       "naverSearchUrl": "https://search.naver.com/search.naver?where=news&query=%ED%97%88%EC%98%81%20%ED%95%9C%EA%B5%AD%EB%B6%80%EB%8F%99%EC%82%B0%EC%9B%90%20%EA%B3%B5%EC%82%AC%EB%B9%84%20%EA%B2%80%EC%A6%9D",
-      "slides": [
-        {
-          "src": "slides/1015_SLIDE_REDEV.webp",
-          "caption": "",
-          "isOriginal": false
-        }
-      ],
-      "thumb": "slides/1015_SLIDE_REDEV.webp",
-      "slideCount": 1
+      "slides": [],
+      "thumb": "",
+      "slideCount": 0
     },
     {
       "id": "1022-1",
@@ -3964,15 +3913,9 @@ window.AUDIT_DATA = {
         }
       ],
       "naverSearchUrl": "https://search.naver.com/search.naver?where=news&query=%ED%97%88%EC%98%81%20%EA%B3%B5%EC%9E%A5%20%EC%B0%BD%EA%B3%A0%20%ED%99%94%EC%9E%AC%20%EB%82%B4%ED%99%94%EA%B5%AC%EC%A1%B0",
-      "slides": [
-        {
-          "src": "slides/1023_SLIDE_FIRE.webp",
-          "caption": "",
-          "isOriginal": false
-        }
-      ],
-      "thumb": "slides/1023_SLIDE_FIRE.webp",
-      "slideCount": 1
+      "slides": [],
+      "thumb": "",
+      "slideCount": 0
     },
     {
       "id": "1023-5",
@@ -4484,15 +4427,9 @@ window.AUDIT_DATA = {
       },
       "news": [],
       "naverSearchUrl": "https://search.naver.com/search.naver?where=news&query=%EC%BD%94%EB%A0%88%EC%9D%BC%20%EC%B2%A0%EB%8F%84%EC%B0%A8%EB%9F%89%20%EC%9E%85%EC%B0%B0",
-      "slides": [
-        {
-          "src": "slides/1023_SLIDE_RAILBID.webp",
-          "caption": "",
-          "isOriginal": false
-        }
-      ],
-      "thumb": "slides/1023_SLIDE_RAILBID.webp",
-      "slideCount": 1
+      "slides": [],
+      "thumb": "",
+      "slideCount": 0
     }
   ]
 };

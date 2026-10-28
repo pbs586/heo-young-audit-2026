@@ -167,7 +167,7 @@
         return `
           <article class="hl-card" data-id="${escapeHtml(item.id)}" tabindex="0" role="button" aria-label="${escapeHtml(item.title)}">
             <div class="hl-thumb-wrap">
-              <img src="${escapeHtml(slide.src)}" alt="${escapeHtml(slide.caption)}" loading="lazy" />
+              ${item.slides && item.slides.length ? `<img src="${escapeHtml(slide.src)}" alt="${escapeHtml(item.title)}" loading="lazy" />` : metricCardHtml(item)}
               ${slideCount > 1 ? `<span class="hl-slide-count">+${slideCount - 1}장</span>` : ""}
             </div>
             <div class="hl-body">
@@ -408,12 +408,12 @@
             return `
               <article class="ticket-card" data-id="${escapeHtml(item.id)}" tabindex="0" role="button" aria-label="${escapeHtml(item.title)}">
                 <div class="card-thumb-box">
-                  <img
+                  ${slides.length ? `<img
                     src="${escapeHtml(firstSlide.src)}"
                     alt="${escapeHtml(firstSlide.caption || item.title)}"
                     class="card-thumb-img"
                     loading="lazy"
-                  />
+                  />` : metricCardHtml(item)}
                   ${
                     slides.length > 1
                       ? `<div class="card-thumb-badges"><span></span><span class="thumb-slide-badge">+${slides.length - 1}장</span></div>`
@@ -479,12 +479,12 @@
             return `
               <article class="deck-card" data-id="${escapeHtml(item.id)}" data-slide-idx="0">
                 <div class="deck-stage" role="button" tabindex="0" aria-label="${escapeHtml(item.title)}">
-                  <img
+                  ${slides.length ? `<img
                     src="${escapeHtml(firstSlide.src)}"
                     alt="${escapeHtml(firstSlide.caption || item.title)}"
                     class="deck-main-img"
                     loading="lazy"
-                  />
+                  />` : metricCardHtml(item)}
                   ${
                     slides.length > 1
                       ? `
@@ -644,6 +644,10 @@
     if (history.replaceState) {
       history.replaceState(null, "", `#item=${encodeURIComponent(itemId)}`);
     }
+  }
+
+  function metricCardHtml(item) {
+    return `<div class="metric-card"><span class="metric-card-label">핵심 수치</span><strong>${escapeHtml(item.keyMetric || item.title)}</strong></div>`;
   }
 
   function closeModal() {
