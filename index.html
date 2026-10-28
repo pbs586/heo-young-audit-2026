@@ -52,14 +52,13 @@ button,input,select{font:inherit;color:inherit}
 .gnb a:hover{background:var(--secondary-5);color:var(--primary-60)}
 
 /* 소개 */
-.intro{padding:var(--s12) 0 var(--s10)}
+.intro{background:var(--secondary-80);color:#fff;padding:var(--s16) 0}
 .intro .wrap{display:grid;grid-template-columns:1fr 440px;gap:var(--s12);align-items:center}
-.crumb{font-size:var(--fs-sm);color:var(--text-muted);margin-bottom:var(--s4)}
-.crumb b{color:var(--text-subtle);font-weight:600}
-h1{font-size:var(--fs-display);line-height:1.25;margin:0 0 var(--s5);color:var(--text-bolder);letter-spacing:-0.02em}
-.lede{font-size:var(--fs-h4);color:var(--text-subtle);margin:0}
-.lede i{font-style:normal;margin:0 10px;color:var(--border)}
-.profile{margin:0;border-radius:var(--r-xl);overflow:hidden;box-shadow:var(--shadow1)}
+.eyebrow{font-size:var(--fs-sm);font-weight:600;letter-spacing:.12em;color:#b1cefb;margin:0 0 var(--s4)}
+h1{font-size:56px;line-height:1.15;margin:0;color:#fff;letter-spacing:-0.03em}
+.byline{display:flex;align-items:baseline;gap:var(--s3);margin:var(--s8) 0 0;padding-top:var(--s5);border-top:1px solid #ffffff33;font-size:var(--fs-sm);color:#d6e0eb}
+.byline b{font-size:var(--fs-h2);color:#fff;letter-spacing:.04em}
+.profile{margin:0;border-radius:var(--r-lg);overflow:hidden}
 .profile img{display:block;width:100%;height:auto;aspect-ratio:3/2;object-fit:cover}
 
 section{padding:var(--s12) 0}
@@ -162,7 +161,8 @@ footer b{color:var(--text-subtle);font-size:var(--fs-sm)}
   :root{--fs-display:28px;--fs-h1:24px;--fs-h2:22px}
   .wrap{padding:0 var(--s4)}
   .gnb{display:none}
-  .intro{padding:var(--s8) 0}
+  .intro{padding:var(--s10) 0}
+  h1{font-size:40px}
   .tabs{width:100%;margin-right:0}
   .search,.search input,.sel{width:100%}
   .cards{grid-template-columns:1fr;padding:var(--s4);gap:var(--s4)}
@@ -195,9 +195,9 @@ footer b{color:var(--text-subtle);font-size:var(--fs-sm)}
 <div class="intro">
   <div class="wrap">
     <div>
-      <div class="crumb">2026 국정감사 <b>· 국토교통위원회</b></div>
-      <h1>허영 의원<br>2026 국정감사 질의</h1>
-      <p class="lede num">10.7–10.23<i>·</i>국토교통부와 산하기관</p>
+      <p class="eyebrow">국토교통위원회</p>
+      <h1>2026<br>국정감사</h1>
+      <p class="byline">국회의원 <b>허영</b></p>
     </div>
     <figure class="profile"><img src="assets/heo-young.jpg" alt="허영 의원" width="1280" height="853"></figure>
   </div>
