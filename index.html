@@ -30,24 +30,6 @@
   --font:"Pretendard GOV","Pretendard Variable",Pretendard,-apple-system,"Malgun Gothic",sans-serif;
   color-scheme:light;
 }
-@media (prefers-color-scheme:dark){ :root:not([data-theme="light"]){
-  --primary-5:#0f1c33; --primary-10:#16294a; --primary-50:#4c87f6; --primary-60:#86aff9; --primary-70:#b1cefb;
-  --secondary-5:#141b24; --secondary-10:#1e2733; --secondary-70:#90b0d5; --secondary-80:#bacbde;
-  --success-5:#122b18; --success-60:#7ec88e; --warning-5:#2e1f00; --warning-60:#ffc95c; --point-5:#310c0f; --point-60:#e0858c;
-  --bg:#131416; --bg-subtle:#1b1d20; --surface:#1e2124;
-  --text:#e6e8ea; --text-bolder:#ffffff; --text-subtle:#b1b8be; --text-muted:#8a949e;
-  --border-light:#2b2f34; --border:#3a3f45; --border-dark:#8a949e;
-  --shadow1:none; --shadow2:0 4px 16px #00000066; color-scheme:dark;
-}}
-:root[data-theme="dark"]{
-  --primary-5:#0f1c33; --primary-10:#16294a; --primary-50:#4c87f6; --primary-60:#86aff9; --primary-70:#b1cefb;
-  --secondary-5:#141b24; --secondary-10:#1e2733; --secondary-70:#90b0d5; --secondary-80:#bacbde;
-  --success-5:#122b18; --success-60:#7ec88e; --warning-5:#2e1f00; --warning-60:#ffc95c; --point-5:#310c0f; --point-60:#e0858c;
-  --bg:#131416; --bg-subtle:#1b1d20; --surface:#1e2124;
-  --text:#e6e8ea; --text-bolder:#ffffff; --text-subtle:#b1b8be; --text-muted:#8a949e;
-  --border-light:#2b2f34; --border:#3a3f45; --border-dark:#8a949e;
-  --shadow1:none; --shadow2:0 4px 16px #00000066; color-scheme:dark;
-}
 
 *{box-sizing:border-box}
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
@@ -61,7 +43,6 @@ button,input,select{font:inherit;color:inherit}
 /* 상단 */
 .util{background:var(--bg-subtle);border-bottom:1px solid var(--border-light);font-size:var(--fs-xs);color:var(--text-subtle)}
 .util .wrap{display:flex;align-items:center;justify-content:space-between;min-height:36px;gap:var(--s4)}
-.tbtn{border:1px solid var(--border);background:var(--surface);border-radius:var(--r-md);padding:2px var(--s2);font-size:var(--fs-xs);cursor:pointer}
 .header{border-bottom:1px solid var(--border-light);background:var(--surface);position:sticky;top:0;z-index:20}
 .header .wrap{display:flex;align-items:center;justify-content:space-between;min-height:64px;gap:var(--s6)}
 .brand{font-size:var(--fs-h3);font-weight:700;color:var(--text-bolder);text-decoration:none;white-space:nowrap}
@@ -210,7 +191,6 @@ footer b{color:var(--text-subtle);font-size:var(--fs-sm)}
 <div class="util">
   <div class="wrap">
     <span>국회 국토교통위원회 · 더불어민주당 허영 의원실</span>
-    <button class="tbtn" id="themeBtn" type="button" aria-label="화면 테마 전환">다크 모드</button>
   </div>
 </div>
 
@@ -683,13 +663,6 @@ $("#sOrg").textContent = new Set(ITEMS.flatMap(it => it.org.split(" · "))).size
 $("#sPr").textContent = PRESS.length;
 $("#sGw").textContent = ITEMS.filter(it => it.gw).length;
 
-/* 테마 */
-const root = document.documentElement, tbtn = $("#themeBtn");
-const isDark = () => root.dataset.theme ? root.dataset.theme === "dark" : matchMedia("(prefers-color-scheme: dark)").matches;
-const syncBtn = () => tbtn.textContent = isDark() ? "라이트 모드" : "다크 모드";
-try { const t = localStorage.getItem("theme"); if (t) root.dataset.theme = t; } catch(e) {}
-syncBtn();
-tbtn.onclick = () => { root.dataset.theme = isDark() ? "light" : "dark"; try { localStorage.setItem("theme", root.dataset.theme); } catch(e) {} syncBtn(); };
 
 render();
 const m = location.hash.match(/^#q(\d{2})$/);
